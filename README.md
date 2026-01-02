@@ -23,16 +23,13 @@
 
 ```bash
 # 저장소 클론
-git clone https://github.com/[your-username]/korem-ipsum.git
+git clone https://github.com/sei0/korem-ipsum.git
 
 # 디렉토리 이동
 cd korem-ipsum
 
-# 로컬 서버 실행 (Python 3)
-python3 -m http.server 8000
-
-# 브라우저에서 열기
-# http://localhost:8000
+# index.html 파일을 브라우저로 바로 열기
+# 또는 Live Server 등의 확장 프로그램 사용
 ```
 
 ## 기술 스택

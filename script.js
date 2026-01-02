@@ -1,3 +1,73 @@
+// ============================================
+// 가짜 문장 생성용 데이터
+// ============================================
+
+// UI 카피형 템플릿 50개
+const SENTENCE_TEMPLATES = [
+    "{N} 설정은 {N}에서 확인할 수 있습니다.",
+    "{N}을(를) 변경하면 {N}이(가) 즉시 반영됩니다.",
+    "{N}은(는) {N} 기준으로 적용됩니다.",
+    "{N}을(를) 선택하면 {N} 옵션이 표시됩니다.",
+    "{N}은(는) 기본값으로 설정되어 있습니다.",
+    "{N} 항목을 추가하면 {N}이(가) 자동으로 갱신됩니다.",
+    "{N}을(를) 저장하면 {N} 기록이 생성됩니다.",
+    "{N} 기능은 {N}에서 사용할 수 있습니다.",
+    "{N}을(를) 활성화하면 {N}이(가) 적용됩니다.",
+    "{N}은(는) {N}에 따라 다르게 표시될 수 있습니다.",
+    "{N} 정보는 {N}에서만 확인 가능합니다.",
+    "{N} 변경 사항은 잠시 후 적용됩니다.",
+    "{N}이(가) 저장되었습니다.",
+    "{N} 설정이 적용되었습니다.",
+    "{N} 업데이트가 완료되었습니다.",
+    "{N}이(가) 정상적으로 처리되었습니다.",
+    "{N}이(가) 생성되었습니다.",
+    "{N}이(가) 삭제되었습니다.",
+    "{N}이(가) 변경되었습니다.",
+    "{N}이(가) 동기화되었습니다.",
+    "{N} 처리 중 문제가 발생했습니다.",
+    "{N}을(를) 불러올 수 없습니다.",
+    "{N}이(가) 유효하지 않습니다.",
+    "{N}이(가) 누락되었습니다.",
+    "{N} 형식이 올바르지 않습니다.",
+    "{N}이(가) 이미 존재합니다.",
+    "{N} 권한이 없습니다.",
+    "{N} 연결이 끊어졌습니다.",
+    "{N}을(를) 저장할 수 없습니다.",
+    "{N}이(가) 잠시 후 다시 시도해주세요.",
+    "{N}이(가) 제한되었습니다.",
+    "{N} 상태를 확인해주세요.",
+    "{N}을(를) 변경하면 {N}에 영향을 줄 수 있습니다.",
+    "{N}은(는) 되돌릴 수 없습니다.",
+    "{N}이(가) 적용되지 않을 수 있습니다.",
+    "{N}을(를) 삭제하면 관련 {N}도 함께 제거됩니다.",
+    "{N}을(를) 계속 진행하시겠습니까?",
+    "{N}이(가) 오래 걸릴 수 있습니다.",
+    "{N}을(를) 확인한 후 진행해주세요.",
+    "{N}이(가) 일부만 저장될 수 있습니다.",
+    "{N}을(를) 입력해주세요.",
+    "{N}을(를) 선택해주세요.",
+    "{N}을(를) 추가해주세요.",
+    "{N}을(를) 다시 시도해주세요.",
+    "{N}을(를) 확인해주세요.",
+    "{N}을(를) 업데이트해주세요.",
+    "{N}을(를) 저장해주세요.",
+    "{N}을(를) 새로고침해주세요.",
+    "{N}을(를) 설정해주세요.",
+    "{N}을(를) 연결해주세요."
+];
+
+// 가짜 명사 생성용 음절 리스트
+const PREFIXES = ["미","재","준","비","상","하","공","복","선","후","단","다","고","저","신","구","대","소","유","무"];
+const MIDS = ["도","정","합","보","준","결","연","동","분","류","환","산","검","증","축","확","변","환","역","적","참","조","필","터","표","준","설","문","항","목","단","계","흐","름","력","량","집","합","조","절","감","지","원","인","자","무","효","기","반","영","역","성","진","행","범","위","소","대","중","경","차","균","편","산","점","관","리","전","후","접","속","환","림","임","차","고","저","상","하","관","연","보","완","료","곡","선","형","태","제","어","적","합","화","전","달","룰","로","그","래","트","픽","션","키","캡","드","폼","필","드","토","글","배","치","린","크","업","로","드","싱","킹"];
+const SUFFIXES = ["값","율","량","성","도","화","형","안","제","권","항","단","표","력","식","태","점","축","선","순","법","규","룰","키","픽","션","폼","토","글","칙","모","델","뷰","트","링","니","티","스","업","원"];
+
+// 금칙어 필터 (간단한 예시)
+const FORBIDDEN_WORDS = ["씨발", "병신", "개새", "지랄", "애플", "구글", "삼성", "서울", "부산"];
+
+// ============================================
+// 기본 로렘입숨 생성용 데이터
+// ============================================
+
 // 한글 유니코드 표준 순서대로 정의
 // 초성 (19개) - 유니코드 표준 순서
 const INITIALS = ['ㄱ', 'ㄲ', 'ㄴ', 'ㄷ', 'ㄸ', 'ㄹ', 'ㅁ', 'ㅂ', 'ㅃ', 'ㅅ', 'ㅆ', 'ㅇ', 'ㅈ', 'ㅉ', 'ㅊ', 'ㅋ', 'ㅌ', 'ㅍ', 'ㅎ'];
@@ -223,6 +293,85 @@ function generateKoreanLoremIpsum(targetLength) {
     return text.substring(0, targetLength).trim();
 }
 
+// ============================================
+// 가짜 문장 생성 로직
+// ============================================
+
+// 가짜 명사 생성 (2-4음절, Prefix/Mid/Suffix 조합)
+function generateFakeNoun() {
+    const syllableCount = Math.floor(Math.random() * 3) + 2; // 2~4음절
+    let noun = '';
+
+    for (let i = 0; i < syllableCount; i++) {
+        let syllable;
+        if (i === 0 && Math.random() < 0.3) {
+            // 30% 확률로 prefix 사용
+            syllable = PREFIXES[Math.floor(Math.random() * PREFIXES.length)];
+        } else if (i === syllableCount - 1 && Math.random() < 0.4) {
+            // 40% 확률로 suffix 사용
+            syllable = SUFFIXES[Math.floor(Math.random() * SUFFIXES.length)];
+        } else {
+            // mid 사용
+            syllable = MIDS[Math.floor(Math.random() * MIDS.length)];
+        }
+        noun += syllable;
+    }
+
+    // 금칙어 필터링
+    for (const forbidden of FORBIDDEN_WORDS) {
+        if (noun.includes(forbidden)) {
+            return generateFakeNoun(); // 재생성
+        }
+    }
+
+    return noun;
+}
+
+// 조사 붙이기 (은/는, 이/가, 을/를)
+function attachParticle(noun, particleType) {
+    const lastChar = noun[noun.length - 1];
+    const lastCharCode = lastChar.charCodeAt(0) - 0xAC00;
+    const hasFinal = (lastCharCode % 28) !== 0; // 받침 있는지 확인
+
+    if (particleType === '은(는)') {
+        return noun + (hasFinal ? '은' : '는');
+    } else if (particleType === '이(가)') {
+        return noun + (hasFinal ? '이' : '가');
+    } else if (particleType === '을(를)') {
+        return noun + (hasFinal ? '을' : '를');
+    }
+    return noun;
+}
+
+// 템플릿에서 {N} 슬롯 치환
+function fillTemplate(template) {
+    return template.replace(/\{N\}/g, () => {
+        const noun = generateFakeNoun();
+        // 조사 패턴 감지 및 처리
+        return noun;
+    }).replace(/(\S+)(은\(는\)|이\(가\)|을\(를\))/g, (match, noun, particle) => {
+        return attachParticle(noun, particle);
+    });
+}
+
+// 가짜 문장 생성
+function generateFakeSentence() {
+    const template = SENTENCE_TEMPLATES[Math.floor(Math.random() * SENTENCE_TEMPLATES.length)];
+    return fillTemplate(template);
+}
+
+// 가짜 문장 로렘입숨 생성
+function generateFakeSentenceLoremIpsum(targetLength) {
+    let text = '';
+
+    while (text.length < targetLength) {
+        const sentence = generateFakeSentence();
+        text += sentence + ' ';
+    }
+
+    return text.substring(0, targetLength).trim();
+}
+
 // DOM 요소
 const charCountInput = document.getElementById('charCount');
 const generateBtn = document.getElementById('generateBtn');
@@ -230,6 +379,25 @@ const outputText = document.getElementById('outputText');
 const currentCharCount = document.getElementById('currentCharCount');
 const copyBtn = document.getElementById('copyBtn');
 const toast = document.getElementById('toast');
+const tabBtns = document.querySelectorAll('.tab-btn');
+
+// 현재 활성화된 탭
+let currentTab = 'basic';
+
+// 탭 전환
+tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        // 모든 탭 버튼에서 active 클래스 제거
+        tabBtns.forEach(b => b.classList.remove('active'));
+        // 클릭된 탭 버튼에 active 클래스 추가
+        btn.classList.add('active');
+        // 현재 탭 업데이트
+        currentTab = btn.dataset.tab;
+        // 출력 텍스트 초기화
+        outputText.value = '';
+        updateCharCount();
+    });
+});
 
 // 글자 수 업데이트
 function updateCharCount() {
@@ -251,7 +419,13 @@ generateBtn.addEventListener('click', () => {
         return;
     }
 
-    const loremText = generateKoreanLoremIpsum(targetLength);
+    let loremText;
+    if (currentTab === 'basic') {
+        loremText = generateKoreanLoremIpsum(targetLength);
+    } else if (currentTab === 'sentence') {
+        loremText = generateFakeSentenceLoremIpsum(targetLength);
+    }
+
     outputText.value = loremText;
     updateCharCount();
 });
