@@ -68,4 +68,4 @@ MIT License - 자유롭게 사용하세요!
 
 ## 제작
 
-Made with ❤️ by [Your Name]
+Made with ❤️ by sei
