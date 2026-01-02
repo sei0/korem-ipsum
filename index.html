@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>한글 로렘입숨 생성기</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>한글 로렘입숨 생성기</h1>
+            <p class="subtitle">원하는 글자 수만큼 한글 더미 텍스트를 생성합니다</p>
+        </header>
+
+        <section class="input-section">
+            <div class="input-group">
+                <label for="charCount">글자 수</label>
+                <input type="number" id="charCount" min="10" max="10000" value="300" placeholder="글자 수 입력">
+                <button id="generateBtn" class="btn-primary">생성하기</button>
+            </div>
+        </section>
+
+        <section class="output-section">
+            <div class="output-header">
+                <h2>생성된 텍스트</h2>
+                <div class="output-info">
+                    <span id="currentCharCount">0</span> 글자
+                </div>
+            </div>
+            <div class="output-box">
+                <textarea id="outputText" readonly placeholder="생성 버튼을 눌러 한글 로렘입숨을 생성하세요"></textarea>
+            </div>
+            <div class="button-group">
+                <button id="copyBtn" class="btn-secondary">📋 복사하기</button>
+            </div>
+        </section>
+
+        <div id="toast" class="toast">복사되었습니다!</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
