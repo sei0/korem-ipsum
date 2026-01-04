@@ -423,6 +423,59 @@ function getRandomConjunction() {
     return CONJUNCTIONS[Math.floor(Math.random() * CONJUNCTIONS.length)];
 }
 
+// 말투 변환 함수
+function convertTone(text, tone) {
+    if (tone === 'formal') {
+        // 합니다체 (기본) - 변환 안 함
+        return text;
+    } else if (tone === 'polite') {
+        // 해요체로 변환 (구체적인 패턴 먼저, 일반 패턴 나중에)
+        return text
+            // 구체적인 동사 패턴 먼저 처리
+            .replace(/좋습니다\./g, '좋아요.')
+            .replace(/좋습니다,/g, '좋아요,')
+            .replace(/같습니다\./g, '같아요.')
+            .replace(/같습니다,/g, '같아요,')
+            .replace(/작습니다\./g, '작아요.')
+            .replace(/작습니다,/g, '작아요,')
+            .replace(/많습니다\./g, '많아요.')
+            .replace(/많습니다,/g, '많아요,')
+            .replace(/적습니다\./g, '적어요.')
+            .replace(/적습니다,/g, '적어요,')
+            // 일반 패턴
+            .replace(/합니다\./g, '해요.')
+            .replace(/됩니다\./g, '돼요.')
+            .replace(/입니다\./g, '이에요.')
+            .replace(/있습니다\./g, '있어요.')
+            .replace(/없습니다\./g, '없어요.')
+            .replace(/습니다\./g, '어요.')
+            .replace(/하십시오\./g, '하세요.')
+            .replace(/하세요\./g, '하세요.')
+            .replace(/합니다,/g, '해요,')
+            .replace(/됩니다,/g, '돼요,')
+            .replace(/있습니다,/g, '있어요,')
+            .replace(/없습니다,/g, '없어요,')
+            .replace(/습니다,/g, '어요,');
+    } else if (tone === 'casual') {
+        // 한다체로 변환
+        return text
+            .replace(/습니다\./g, '다.')
+            .replace(/합니다\./g, '한다.')
+            .replace(/됩니다\./g, '된다.')
+            .replace(/입니다\./g, '이다.')
+            .replace(/있습니다\./g, '있다.')
+            .replace(/없습니다\./g, '없다.')
+            .replace(/하십시오\./g, '하라.')
+            .replace(/하세요\./g, '하라.')
+            .replace(/합니다,/g, '한다,')
+            .replace(/됩니다,/g, '된다,')
+            .replace(/습니다,/g, '다,')
+            .replace(/있습니다,/g, '있다,')
+            .replace(/없습니다,/g, '없다,');
+    }
+    return text;
+}
+
 // 문장 타입별 생성 함수
 function generateShortSentence() {
     const template = SHORT_TEMPLATES[Math.floor(Math.random() * SHORT_TEMPLATES.length)];
@@ -456,7 +509,7 @@ function generateFakeSentence() {
 }
 
 // 가짜 문장 로렘입숨 생성 (접속사 연결 및 문단 구분)
-function generateFakeSentenceLoremIpsum(targetLength) {
+function generateFakeSentenceLoremIpsum(targetLength, tone = 'formal') {
     let text = '';
     let sentenceCount = 0;
 
@@ -481,6 +534,9 @@ function generateFakeSentenceLoremIpsum(targetLength) {
             }
         }
     }
+
+    // 말투 변환 적용
+    text = convertTone(text, tone);
 
     return text.substring(0, targetLength).trim();
 }
@@ -507,10 +563,10 @@ generateBtn.addEventListener('click', () => {
         return;
     }
 
-    // 각 카드에 다른 가짜 문장 생성
-    output1.value = generateFakeSentenceLoremIpsum(targetLength);
-    output2.value = generateFakeSentenceLoremIpsum(targetLength);
-    output3.value = generateFakeSentenceLoremIpsum(targetLength);
+    // 각 카드에 다른 말투로 가짜 문장 생성
+    output1.value = generateFakeSentenceLoremIpsum(targetLength, 'formal');   // 합니다체
+    output2.value = generateFakeSentenceLoremIpsum(targetLength, 'polite');   // 해요체
+    output3.value = generateFakeSentenceLoremIpsum(targetLength, 'casual');   // 한다체
 });
 
 // overlay 클릭으로 복사
