@@ -375,35 +375,10 @@ function generateFakeSentenceLoremIpsum(targetLength) {
 // DOM 요소
 const charCountInput = document.getElementById('charCount');
 const generateBtn = document.getElementById('generateBtn');
-const outputText = document.getElementById('outputText');
-const currentCharCount = document.getElementById('currentCharCount');
-const copyBtn = document.getElementById('copyBtn');
+const output1 = document.getElementById('output1');
+const output2 = document.getElementById('output2');
+const output3 = document.getElementById('output3');
 const toast = document.getElementById('toast');
-const tabBtns = document.querySelectorAll('.tab-btn');
-
-// 현재 활성화된 탭
-let currentTab = 'basic';
-
-// 탭 전환
-tabBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-        // 모든 탭 버튼에서 active 클래스 제거
-        tabBtns.forEach(b => b.classList.remove('active'));
-        // 클릭된 탭 버튼에 active 클래스 추가
-        btn.classList.add('active');
-        // 현재 탭 업데이트
-        currentTab = btn.dataset.tab;
-        // 출력 텍스트 초기화
-        outputText.value = '';
-        updateCharCount();
-    });
-});
-
-// 글자 수 업데이트
-function updateCharCount() {
-    const count = outputText.value.length;
-    currentCharCount.textContent = count;
-}
 
 // 생성 버튼 클릭
 generateBtn.addEventListener('click', () => {
@@ -419,33 +394,35 @@ generateBtn.addEventListener('click', () => {
         return;
     }
 
-    let loremText;
-    if (currentTab === 'basic') {
-        loremText = generateKoreanLoremIpsum(targetLength);
-    } else if (currentTab === 'sentence') {
-        loremText = generateFakeSentenceLoremIpsum(targetLength);
-    }
-
-    outputText.value = loremText;
-    updateCharCount();
+    // 각 카드에 다른 가짜 문장 생성
+    output1.value = generateFakeSentenceLoremIpsum(targetLength);
+    output2.value = generateFakeSentenceLoremIpsum(targetLength);
+    output3.value = generateFakeSentenceLoremIpsum(targetLength);
 });
 
-// 복사 버튼 클릭
-copyBtn.addEventListener('click', async () => {
-    if (!outputText.value) {
-        alert('복사할 텍스트가 없습니다. 먼저 생성해주세요.');
-        return;
-    }
+// overlay 클릭으로 복사
+const overlays = document.querySelectorAll('.card-overlay');
+overlays.forEach(overlay => {
+    overlay.addEventListener('click', async () => {
+        const card = overlay.parentElement;
+        const targetId = card.dataset.target;
+        const targetTextarea = document.getElementById(targetId);
 
-    try {
-        await navigator.clipboard.writeText(outputText.value);
-        showToast();
-    } catch (err) {
-        // Fallback 복사 방법
-        outputText.select();
-        document.execCommand('copy');
-        showToast();
-    }
+        if (!targetTextarea.value) {
+            alert('복사할 텍스트가 없습니다. 먼저 생성해주세요.');
+            return;
+        }
+
+        try {
+            await navigator.clipboard.writeText(targetTextarea.value);
+            showToast();
+        } catch (err) {
+            // Fallback 복사 방법
+            targetTextarea.select();
+            document.execCommand('copy');
+            showToast();
+        }
+    });
 });
 
 // 토스트 메시지 표시
