@@ -316,7 +316,7 @@ header {
     left: 0;
     top: 0;
     font-size: 15px;
-    color: #000000;
+    color: var(--zinc-900);
     font-weight: 400;
 }
 
@@ -326,7 +326,7 @@ header {
     top: 0;
     width: 40px;
     height: 40px;
-    background: #000000;
+    background: var(--zinc-900);
     border-radius: 20px;
     display: flex;
     align-items: center;
@@ -365,23 +365,23 @@ header {
 
 .input-group {
     display: flex;
-    gap: 15px;
+    gap: 8px;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
 }
 
 label {
-    font-size: 1.1em;
+    font-size: 1em;
     font-weight: 600;
     color: #333;
 }
 
 input[type="number"] {
     padding: 12px 20px;
-    font-size: 1.1em;
+    font-size: 1em;
     border: 1px solid var(--zinc-300);
-    border-radius: 2px;
+    border-radius: 12px;
     width: 200px;
     transition: border-color 0.3s;
 }
@@ -392,13 +392,13 @@ input[type="number"]:focus {
 }
 
 .btn-primary {
-    padding: 12px 30px;
-    font-size: 1.1em;
+    padding: 12px 20px;
+    font-size: 1em;
     font-weight: 600;
     background: var(--zinc-900);
     color: var(--zinc-50);
     border: none;
-    border-radius: 2px;
+    border-radius: 12px;
     cursor: pointer;
     transition: transform 0.2s, box-shadow 0.2s;
 }
