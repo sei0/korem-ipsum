@@ -296,74 +296,71 @@
 
 body {
     font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Malgun Gothic", sans-serif;
-    background: var(--zinc-100);
+    background: var(--orange-50);
     min-height: 100vh;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 20px 20px 40px 20px;
 }
 
-.container {
-    width: 100%;
-    max-width: 800px;
-    background: white;
-    border-radius: 20px;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
-    padding: 40px;
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 header {
-    text-align: center;
-    margin-bottom: 20px;
+    position: relative;
+    margin-bottom: 50px;
 }
 
-h1 {
-    color: #333;
-    font-size: 2.5em;
-    margin-bottom: 10px;
+.copyright {
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 15px;
+    color: #000000;
+    font-weight: 400;
+}
+
+.github-button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    background: #000000;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    transition: all 0.2s;
+    text-decoration: none;
+}
+
+.github-button:hover {
+    background: #333333;
+    transform: translateY(-2px);
+}
+
+.header-content {
+    text-align: center;
+}
+
+.main-logo {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 40px;
 }
 
 .subtitle {
     color: #666;
-    font-size: 1.1em;
-}
-
-.tabs {
-    display: flex;
-    gap: 8px;
-    justify-content: center;
-    margin-bottom: 30px;
-    background: #f5f5f5;
-    padding: 6px;
-    border-radius: 12px;
-}
-
-.tab-btn {
-    padding: 10px 28px;
-    font-size: 1em;
-    font-weight: 600;
-    background: transparent;
-    color: #666;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s;
-}
-
-.tab-btn:hover {
-    color: var(--orange-500);
-    background: rgba(249, 115, 22, 0.1);
-}
-
-.tab-btn.active {
-    color: white;
-    background: var(--orange-500);
-    box-shadow: 0 2px 8px rgba(249, 115, 22, 0.3);
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.6;
 }
 
 .input-section {
-    margin-bottom: 40px;
+    margin-bottom: 60px;
 }
 
 .input-group {
@@ -375,7 +372,7 @@ h1 {
 }
 
 label {
-    font-size: 1.2em;
+    font-size: 1.1em;
     font-weight: 600;
     color: #333;
 }
@@ -383,8 +380,8 @@ label {
 input[type="number"] {
     padding: 12px 20px;
     font-size: 1.1em;
-    border: 2px solid #ddd;
-    border-radius: 10px;
+    border: 1px solid var(--zinc-300);
+    border-radius: 2px;
     width: 200px;
     transition: border-color 0.3s;
 }
@@ -398,94 +395,170 @@ input[type="number"]:focus {
     padding: 12px 30px;
     font-size: 1.1em;
     font-weight: 600;
-    background: var(--orange-500);
-    color: white;
+    background: var(--zinc-900);
+    color: var(--zinc-50);
     border: none;
-    border-radius: 10px;
+    border-radius: 2px;
     cursor: pointer;
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(249, 115, 22, 0.4);
+    box-shadow: 0 5px 15px rgba(24, 24, 27, 0.3);
 }
 
 .btn-primary:active {
     transform: translateY(0);
 }
 
-.output-section {
-    border-top: 2px solid #eee;
-    padding-top: 30px;
+/* Cards Section */
+.cards-section {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 500px;
+    gap: 0;
+    perspective: 1000px;
 }
 
-.output-header {
+.card {
+    position: relative;
+    width: 350px;
+    min-height: 450px;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    cursor: pointer;
+    overscroll-behavior: contain;
+}
+
+/* 카드 겹치기 및 회전 */
+.card-white {
+    background: var(--zinc-50);
+    transform: rotate(-3deg) translateX(-5px);
+    z-index: 1;
+}
+
+.card-white .card-overlay {
+    background: linear-gradient(to bottom, rgba(63, 63, 70, 0.3) 0%, rgba(63, 63, 70, 0) 100%);
+}
+
+.card-pink {
+    background: var(--pink-200);
+    transform: rotate(2deg);
+    z-index: 2;
+}
+
+.card-pink .card-overlay {
+    background: linear-gradient(to bottom, rgba(190, 24, 93, 0.3) 0%, rgba(190, 24, 93, 0) 100%);
+}
+
+.card-orange {
+    background: var(--orange-400);
+    transform: rotate(-4deg) translateX(5px);
+    z-index: 1;
+}
+
+.card-orange .card-overlay {
+    background: linear-gradient(to bottom, rgba(234, 88, 12, 0.5) 0%, rgba(234, 88, 12, 0) 100%);
+}
+
+/* 호버 효과 */
+.card:hover {
+    transform: rotate(0deg) translateY(-20px) scale(1.05);
+    z-index: 10;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-h2 {
-    color: #333;
-    font-size: 1.5em;
-}
-
-.output-info {
-    font-size: 1.1em;
-    color: var(--orange-500);
-    font-weight: 600;
-}
-
-.output-box {
+    align-items: flex-start;
     margin-bottom: 20px;
 }
 
-textarea {
-    width: 100%;
-    min-height: 300px;
-    padding: 20px;
-    font-size: 1em;
-    line-height: 1.8;
-    border: 2px solid #ddd;
-    border-radius: 10px;
-    resize: vertical;
-    font-family: inherit;
-    transition: border-color 0.3s;
-}
-
-textarea:focus {
-    outline: none;
-    border-color: var(--orange-500);
-}
-
-.button-group {
+.illustration-placeholder {
+    width: 100px;
+    height: 100px;
+    border: 2px dashed var(--zinc-300);
+    border-radius: 8px;
     display: flex;
+    align-items: center;
     justify-content: center;
+    color: var(--zinc-400);
+    font-size: 12px;
 }
 
-.btn-secondary {
-    padding: 12px 30px;
-    font-size: 1.1em;
-    font-weight: 600;
-    background: white;
-    color: var(--orange-500);
-    border: 2px solid var(--orange-500);
-    border-radius: 10px;
-    cursor: pointer;
-    transition: all 0.2s;
+.illustration {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
 }
 
-.btn-secondary:hover {
-    background: var(--orange-500);
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 20%;
+    border-radius: 12px 12px 0 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 30px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.card:hover .card-overlay {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.overlay-content {
     color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(249, 115, 22, 0.4);
+    font-size: 0.9em;
+    font-weight: 500;
+    font-family: "Pretendard Variable", Pretendard, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-.btn-secondary:active {
-    transform: translateY(0);
+.card-body {
+    height: 100%;
+}
+
+.card-body textarea {
+    width: 100%;
+    height: 360px;
+    padding: 0;
+    font-size: 14px;
+    line-height: 1.8;
+    border: none;
+    background: transparent;
+    resize: none;
+    font-family: inherit;
+    color: var(--zinc-800);
+    overscroll-behavior: contain;
+    overflow-y: auto;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+.card-body textarea::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+.card-body textarea:focus {
+    outline: none;
+}
+
+.card-body textarea::placeholder {
+    color: var(--zinc-400);
 }
 
 .toast {
@@ -493,10 +566,10 @@ textarea:focus {
     bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
-    background: #333;
-    color: white;
+    background: var(--zinc-900);
+    color: var(--zinc-50);
     padding: 15px 30px;
-    border-radius: 10px;
+    border-radius: 2px;
     font-size: 1.1em;
     opacity: 0;
     transition: opacity 0.3s;
@@ -508,13 +581,46 @@ textarea:focus {
     opacity: 1;
 }
 
-@media (max-width: 600px) {
-    .container {
-        padding: 20px;
+/* 모바일 반응형 */
+@media (max-width: 1100px) {
+    .cards-section {
+        flex-direction: column;
+        gap: 40px;
+        min-height: auto;
     }
 
-    h1 {
-        font-size: 1.8em;
+    .card {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    /* 모바일에서 세로 겹치기 */
+    .card-white {
+        transform: rotate(-3deg) translateY(-10px);
+    }
+
+    .card-pink {
+        transform: rotate(2deg) translateY(-5px);
+    }
+
+    .card-orange {
+        transform: rotate(-2deg) translateY(0px);
+    }
+
+    .card:hover {
+        transform: rotate(0deg) translateY(-10px) scale(1.02);
+    }
+}
+
+@media (max-width: 600px) {
+    .copyright {
+        position: static;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .github-button {
+        display: none;
     }
 
     .input-group {
@@ -523,5 +629,14 @@ textarea:focus {
 
     input[type="number"] {
         width: 100%;
+    }
+
+    .card {
+        padding: 20px;
+        min-height: 400px;
+    }
+
+    .card-body textarea {
+        height: 280px;
     }
 }
