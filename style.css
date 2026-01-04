@@ -607,7 +607,7 @@ input[type="number"]:focus {
 }
 
 /* 모바일 반응형 */
-@media (max-width: 1100px) {
+@media (max-width: 720px) {
     .cards-section {
         flex-direction: column;
         gap: 40px;
@@ -635,9 +635,7 @@ input[type="number"]:focus {
     .card:hover {
         transform: rotate(0deg) translateY(-10px) scale(1.02);
     }
-}
 
-@media (max-width: 600px) {
     .copyright {
         position: static;
         text-align: center;
@@ -664,4 +662,119 @@ input[type="number"]:focus {
     .card-body textarea {
         height: 280px;
     }
+
+    .info-content {
+        margin: 20px 20px 0;
+        padding: 30px 20px;
+    }
+
+    .info-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .info-section h3 {
+        font-size: 1.1rem;
+    }
+
+    .info-section p,
+    .info-section ul li {
+        font-size: 0.9rem;
+    }
+}
+
+/* Visually hidden (for SEO h1) */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Info Section */
+.info-section {
+    max-width: 800px;
+    margin: 60px auto 40px;
+    text-align: center;
+}
+
+.info-toggle {
+    background: none;
+    border: none;
+    color: #ea580c; /* orange-600 */
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 10px 20px;
+    font-family: inherit;
+    transition: opacity 0.2s;
+}
+
+.info-toggle:hover {
+    opacity: 0.7;
+}
+
+.info-content {
+    max-width: 800px;
+    margin: 20px auto 0;
+    padding: 40px 30px;
+    background: linear-gradient(135deg, var(--slate-50) 0%, var(--neutral-50) 100%);
+    border-radius: 20px;
+    border: 1px solid var(--slate-200);
+    color: var(--slate-800);
+    line-height: 1.8;
+    text-align: left;
+}
+
+.info-section h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--slate-900);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.info-section h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--slate-800);
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.info-section p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: var(--slate-700);
+}
+
+.info-section ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 20px;
+}
+
+.info-section ul li {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--slate-200);
+    font-size: 0.95rem;
+    color: var(--slate-700);
+}
+
+.info-section ul li:last-child {
+    border-bottom: none;
+}
+
+.info-section .final-cta {
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--slate-900);
+    margin-top: 30px;
+    margin-bottom: 0;
 }

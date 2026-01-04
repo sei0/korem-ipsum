@@ -469,3 +469,17 @@ charCountInput.addEventListener('keypress', (e) => {
 window.addEventListener('load', () => {
     generateBtn.click();
 });
+
+// 정보 섹션 토글
+const infoToggle = document.getElementById('infoToggle');
+const infoContent = document.getElementById('infoContent');
+
+if (infoToggle && infoContent) {
+    infoToggle.addEventListener('click', () => {
+        if (infoContent.style.display === 'none') {
+            infoContent.style.display = 'block';
+        } else {
+            infoContent.style.display = 'none';
+        }
+    });
+}
