@@ -1,0 +1,24 @@
+{
+  "name": "Korem Ipsum - 한글 더미 텍스트 생성기",
+  "short_name": "Korem Ipsum",
+  "description": "디자인과 웹 개발 작업에 필요한 자연스러운 한글 더미 텍스트를 생성하는 도구입니다.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/assets/images/favi-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/images/favi-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
