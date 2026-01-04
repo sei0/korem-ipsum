@@ -11,7 +11,7 @@
 
 ## 데모
 
-[여기에 배포 URL 추가 예정]
+🌐 **[https://sei0.github.io/korem-ipsum/](https://sei0.github.io/korem-ipsum/)**
 
 ## 사용 방법
 
