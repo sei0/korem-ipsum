@@ -498,6 +498,31 @@ input[type="number"]:focus {
     object-fit: contain;
 }
 
+.copy-icon-button {
+    background: transparent;
+    border: none;
+    color: rgba(24, 24, 27, 0.3);
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+}
+
+.copy-icon-button:hover {
+    background: rgba(0, 0, 0, 0.05);
+    color: rgba(24, 24, 27, 0.6);
+}
+
+.copy-icon-button:active {
+    transform: scale(0.95);
+}
+
 .card-overlay {
     position: absolute;
     top: 0;

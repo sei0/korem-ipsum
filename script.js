@@ -425,6 +425,31 @@ overlays.forEach(overlay => {
     });
 });
 
+// copy 아이콘 버튼 클릭으로 복사
+const copyIconButtons = document.querySelectorAll('.copy-icon-button');
+copyIconButtons.forEach(button => {
+    button.addEventListener('click', async (e) => {
+        e.stopPropagation(); // 카드 클릭 이벤트 전파 방지
+        const targetId = button.dataset.target;
+        const targetTextarea = document.getElementById(targetId);
+
+        if (!targetTextarea.value) {
+            alert('복사할 텍스트가 없습니다. 먼저 생성해주세요.');
+            return;
+        }
+
+        try {
+            await navigator.clipboard.writeText(targetTextarea.value);
+            showToast();
+        } catch (err) {
+            // Fallback 복사 방법
+            targetTextarea.select();
+            document.execCommand('copy');
+            showToast();
+        }
+    });
+});
+
 // 토스트 메시지 표시
 function showToast() {
     toast.classList.add('show');
