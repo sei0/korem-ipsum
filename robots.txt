@@ -1,0 +1,24 @@
+# robots.txt for Korem Ipsum
+# https://sei0.github.io/korem-ipsum/
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://sei0.github.io/korem-ipsum/sitemap.xml
+
+# Google-specific
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+# Naver-specific
+User-agent: Yeti
+Allow: /
+
+# Disallow crawling of these paths if they exist
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /.DS_Store
