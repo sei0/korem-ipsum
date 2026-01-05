@@ -846,6 +846,6 @@ input[type="text"]:focus {
 .main-footer .copyright {
     position: static;
     font-size: 0.875rem;
-    color: var(--zinc-400);
+    color: var(--zinc-900);
     font-weight: 400;
 }
