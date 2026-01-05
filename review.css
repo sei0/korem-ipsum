@@ -65,7 +65,7 @@
 
 .star {
     font-size: 1.2rem;
-    color: var(--slate-300);
+    color: var(--zinc-300);
     transition: color 0.2s ease;
 }
 
@@ -86,7 +86,7 @@
     border: none;
     font-size: 0.95rem;
     line-height: 1.6;
-    color: var(--slate-700);
+    color: var(--zinc-700);
     background: transparent;
     resize: none;
     font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
@@ -105,7 +105,7 @@
 
 .char-count {
     font-size: 0.75rem;
-    color: var(--slate-400);
+    color: var(--zinc-400);
     font-weight: 400;
 }
 
