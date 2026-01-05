@@ -48,6 +48,9 @@
     <!-- Theme Color -->
     <meta name="theme-color" content="#ffffff">
 
+    <!-- Application Name -->
+    <meta name="application-name" content="Korem Ipsum">
+
     <!-- Web App Manifest -->
     <link rel="manifest" href="manifest.json">
 
@@ -59,24 +62,40 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "Korem Ipsum",
-      "alternateName": ["한글 더미 텍스트 생성기", "한글 로렘입숨 생성기", "랜덤 문장 생성기"],
-      "url": "https://sei0.github.io/korem-ipsum/",
-      "description": "디자인·웹 작업에 필요한 한글 더미 텍스트를 무료로 생성하세요. 랜덤 문장 생성, 테스트 문구, 샘플 텍스트를 클릭 한 번으로 만들 수 있습니다.",
-      "applicationCategory": "DesignApplication",
-      "operatingSystem": "Any",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "KRW"
-      },
-      "author": {
-        "@type": "Person",
-        "name": "sei"
-      },
-      "inLanguage": "ko-KR",
-      "keywords": "더미 텍스트, 더미 텍스트 생성, 랜덤 텍스트 생성, 랜덤 문장 생성, 한글 더미텍스트, 한글 로렘입숨, 로렘입숨, 샘플 텍스트, 테스트 문구"
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://sei0.github.io/korem-ipsum/#website",
+          "url": "https://sei0.github.io/korem-ipsum/",
+          "name": "Korem Ipsum",
+          "description": "한글 로렘입숨 생성기",
+          "inLanguage": "ko-KR"
+        },
+        {
+          "@type": "WebApplication",
+          "@id": "https://sei0.github.io/korem-ipsum/#webapp",
+          "isPartOf": {
+            "@id": "https://sei0.github.io/korem-ipsum/#website"
+          },
+          "name": "Korem Ipsum",
+          "alternateName": ["한글 더미 텍스트 생성기", "한글 로렘입숨 생성기", "랜덤 문장 생성기"],
+          "url": "https://sei0.github.io/korem-ipsum/",
+          "description": "디자인·웹 작업에 필요한 한글 더미 텍스트를 무료로 생성하세요. 랜덤 문장 생성, 테스트 문구, 샘플 텍스트를 클릭 한 번으로 만들 수 있습니다.",
+          "applicationCategory": "DesignApplication",
+          "operatingSystem": "Any",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "KRW"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "sei"
+          },
+          "inLanguage": "ko-KR",
+          "keywords": "더미 텍스트, 더미 텍스트 생성, 랜덤 텍스트 생성, 랜덤 문장 생성, 한글 더미텍스트, 한글 로렘입숨, 로렘입숨, 샘플 텍스트, 테스트 문구"
+        }
+      ]
     }
     </script>
 </head>
