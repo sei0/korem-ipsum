@@ -1,0 +1,117 @@
+/* Review Page Specific Styles */
+
+/* Review Cards Section */
+.review-cards-section {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.review-card {
+    position: relative;
+    background: var(--zinc-50);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* 약간의 회전 효과 */
+.review-card:nth-child(1) {
+    transform: rotate(-1deg);
+}
+
+.review-card:nth-child(2) {
+    transform: rotate(1deg);
+}
+
+.review-card:nth-child(3) {
+    transform: rotate(-0.5deg);
+}
+
+.review-card:nth-child(4) {
+    transform: rotate(0.5deg);
+}
+
+.review-card:nth-child(5) {
+    transform: rotate(-1deg);
+}
+
+.review-card:nth-child(6) {
+    transform: rotate(0.8deg);
+}
+
+.review-card:hover {
+    transform: rotate(0deg) translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+/* Star Rating */
+.stars {
+    display: flex;
+    gap: 2px;
+}
+
+.star {
+    font-size: 1.2rem;
+    color: var(--slate-300);
+    transition: color 0.2s ease;
+}
+
+.star.filled {
+    color: #FFD700;
+}
+
+/* Review Body */
+.review-body {
+    width: 100%;
+    margin-bottom: 8px;
+}
+
+.review-body textarea {
+    width: 100%;
+    min-height: 200px;
+    padding: 0;
+    border: none;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--slate-700);
+    background: transparent;
+    resize: none;
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+}
+
+.review-body textarea:focus {
+    outline: none;
+}
+
+/* Review Footer */
+.review-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 4px;
+}
+
+.char-count {
+    font-size: 0.75rem;
+    color: var(--slate-400);
+    font-weight: 400;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .review-cards-section {
+        grid-template-columns: 1fr;
+    }
+}
