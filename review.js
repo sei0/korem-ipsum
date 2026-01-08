@@ -319,4 +319,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Auto-generate on page load
     generateAllReviews();
+
+    // Info toggle functionality
+    const infoToggle = document.getElementById('infoToggle');
+    const infoContent = document.getElementById('infoContent');
+
+    if (infoToggle && infoContent) {
+        infoToggle.addEventListener('click', () => {
+            const isVisible = infoContent.style.display !== 'none';
+            infoContent.style.display = isVisible ? 'none' : 'block';
+        });
+    }
 });
