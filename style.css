@@ -747,10 +747,7 @@ input[type="text"]:focus {
     max-width: 800px;
     margin: 20px auto 0;
     padding: 40px 30px;
-    background: linear-gradient(135deg, var(--slate-50) 0%, var(--neutral-50) 100%);
-    border-radius: 20px;
-    border: 1px solid var(--slate-200);
-    color: var(--slate-800);
+    color: var(--zinc-800);
     line-height: 1.8;
     text-align: left;
 }
@@ -758,7 +755,7 @@ input[type="text"]:focus {
 .info-section h2 {
     font-size: 1.8rem;
     font-weight: 700;
-    color: var(--slate-900);
+    color: var(--zinc-900);
     margin-bottom: 20px;
     text-align: center;
 }
@@ -766,7 +763,7 @@ input[type="text"]:focus {
 .info-section h3 {
     font-size: 1.3rem;
     font-weight: 600;
-    color: var(--slate-800);
+    color: var(--zinc-800);
     margin-top: 30px;
     margin-bottom: 15px;
 }
@@ -774,7 +771,7 @@ input[type="text"]:focus {
 .info-section p {
     font-size: 1rem;
     margin-bottom: 20px;
-    color: var(--slate-700);
+    color: var(--zinc-700);
 }
 
 .info-section ul {
@@ -785,9 +782,9 @@ input[type="text"]:focus {
 
 .info-section ul li {
     padding: 10px 0;
-    border-bottom: 1px solid var(--slate-200);
+    border-bottom: 1px solid var(--zinc-200);
     font-size: 0.95rem;
-    color: var(--slate-700);
+    color: var(--zinc-700);
 }
 
 .info-section ul li:last-child {
@@ -798,7 +795,7 @@ input[type="text"]:focus {
     text-align: center;
     font-size: 1.1rem;
     font-weight: 500;
-    color: var(--slate-900);
+    color: var(--zinc-900);
     margin-top: 30px;
     margin-bottom: 0;
 }
