@@ -1,7 +1,7 @@
 {
   "name": "Korem Ipsum - 한글 더미 텍스트 생성기",
   "short_name": "Korem Ipsum",
-  "description": "디자인과 웹 개발 작업에 필요한 자연스러운 한글 더미 텍스트를 생성하는 도구입니다.",
+  "description": "자연스러운 한글 더미 텍스트를 무료로 생성하세요. 실제 한글 빈도를 반영한 알고리즘 기반 생성기.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
