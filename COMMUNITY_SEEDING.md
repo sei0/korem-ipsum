@@ -186,13 +186,13 @@ Features:
 - X 쓰레드에서 개별 블로그 글을 추가 콘텐츠로 공유
 
 **블로그 URL 목록**:
-- https://sei0.github.io/korem-ipsum/blog-dummy-text-guide.html
-- https://sei0.github.io/korem-ipsum/blog-designer-dummy-text.html
-- https://sei0.github.io/korem-ipsum/blog-why-dummy-text.html
-- https://sei0.github.io/korem-ipsum/blog-korean-vs-english.html
-- https://sei0.github.io/korem-ipsum/blog-figma-dummy-text.html
-- https://sei0.github.io/korem-ipsum/blog-prototyping-tips.html
-- https://sei0.github.io/korem-ipsum/blog-korean-typography.html
-- https://sei0.github.io/korem-ipsum/blog-generator-comparison.html
-- https://sei0.github.io/korem-ipsum/blog-developer-test-text.html
-- https://sei0.github.io/korem-ipsum/blog-character-count.html
+- https://sei0.github.io/korem-ipsum/blog/dummy-text-guide.html
+- https://sei0.github.io/korem-ipsum/blog/designer-dummy-text.html
+- https://sei0.github.io/korem-ipsum/blog/why-dummy-text.html
+- https://sei0.github.io/korem-ipsum/blog/korean-vs-english.html
+- https://sei0.github.io/korem-ipsum/blog/figma-dummy-text.html
+- https://sei0.github.io/korem-ipsum/blog/prototyping-tips.html
+- https://sei0.github.io/korem-ipsum/blog/korean-typography.html
+- https://sei0.github.io/korem-ipsum/blog/generator-comparison.html
+- https://sei0.github.io/korem-ipsum/blog/developer-test-text.html
+- https://sei0.github.io/korem-ipsum/blog/character-count.html
