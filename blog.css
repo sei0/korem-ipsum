@@ -39,7 +39,6 @@
     margin-bottom: 1.5rem;
     color: var(--zinc-900);
     padding-top: 1rem;
-    border-top: 1px solid var(--zinc-200);
 }
 
 .blog-content h2:first-of-type {
@@ -87,7 +86,6 @@
     border-left: 4px solid var(--orange-500);
     padding: 1.5rem;
     margin: 2rem 0;
-    border-radius: 12px;
 }
 
 .highlight-box p {

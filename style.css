@@ -631,7 +631,7 @@ input[type="text"]:focus {
 }
 
 /* 모바일 반응형 */
-@media (max-width: 720px) {
+@media (max-width: 768px) {
     .cards-section {
         flex-direction: column;
         gap: 40px;
@@ -898,9 +898,11 @@ input[type="text"]:focus {
     font-weight: 400;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 768px) {
     .nav-hamburger {
         display: flex;
+        top: 0;
+        left: 0;
     }
 
     .main-nav {
@@ -949,5 +951,15 @@ input[type="text"]:focus {
 
     .nav-overlay.active {
         display: block;
+    }
+
+    .header-content {
+        text-align: center;
+        padding-top: 8px;
+    }
+
+    .main-logo {
+        max-width: 200px;
+        margin-bottom: 16px;
     }
 }
