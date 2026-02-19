@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>글자수 세기 | 공백 포함·제외 문자 수 카운터 - Korem Ipsum</title>
+    <meta name="title" content="글자수 세기 | 공백 포함·제외 문자 수 카운터 - Korem Ipsum">
+    <meta name="description" content="글자수 세기와 글자수 계산이 필요한 순간, 텍스트를 입력하면 문자수 세기 결과를 실시간으로 확인하세요. 공백 포함·제외 글자수, 단어 수, 바이트 수, 문장 수, 문단 수, 원고지 매수까지 한 번에 계산합니다.">
+    <meta name="keywords" content="글자수 세기, 글자수 계산, 문자수 세기, 글자수 카운터, 공백 포함 글자수, 공백 제외 글자수, 바이트 수, 단어 수, 문단 수, 한글 글자수, 글자수 확인, 텍스트 분석, 문자수 계산기, 원고지 매수">
+    <meta name="author" content="sei">
+    <meta name="language" content="Korean">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+
+    <!-- Google Search Console Verification -->
+    <meta name="google-site-verification" content="4JTtYPb2wpnOnXf5bR2D577ZygeWXAWft8NVuE2z7KA" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" sizes="32x32">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favi.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favi-32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/images/favi-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/images/favi-512.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="assets/images/favi-192.png">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://sei0.github.io/korem-ipsum/counter.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sei0.github.io/korem-ipsum/counter.html">
+    <meta property="og:title" content="글자수 세기 | 공백 포함·제외 문자 수 카운터 - Korem Ipsum">
+    <meta property="og:description" content="글자수 세기, 글자수 계산, 문자수 세기를 한 번에. 공백 포함·제외 글자수부터 바이트 수, 원고지 매수까지 실시간으로 확인하세요.">
+    <meta property="og:image" content="https://sei0.github.io/korem-ipsum/assets/images/korem-ipsum-logo.svg">
+    <meta property="og:image:alt" content="Korem Ipsum 로고">
+    <meta property="og:site_name" content="Korem Ipsum">
+    <meta property="og:locale" content="ko_KR">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://sei0.github.io/korem-ipsum/counter.html">
+    <meta name="twitter:title" content="글자수 세기 | 공백 포함·제외 문자 수 카운터 - Korem Ipsum">
+    <meta name="twitter:description" content="글자수 세기, 글자수 계산, 문자수 세기를 한 번에. 공백 포함·제외 글자수부터 바이트 수, 원고지 매수까지 실시간으로 확인하세요.">
+    <meta name="twitter:image" content="https://sei0.github.io/korem-ipsum/assets/images/korem-ipsum-logo.svg">
+    <meta name="twitter:image:alt" content="Korem Ipsum 로고">
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Application Name -->
+    <meta name="application-name" content="Korem Ipsum">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="counter.css">
+
+    <!-- Structured Data / JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://sei0.github.io/korem-ipsum/#website",
+          "url": "https://sei0.github.io/korem-ipsum/",
+          "name": "Korem Ipsum",
+          "description": "한글 더미 텍스트 생성기",
+          "inLanguage": "ko-KR"
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://sei0.github.io/korem-ipsum/counter.html#webpage",
+          "url": "https://sei0.github.io/korem-ipsum/counter.html",
+          "name": "글자수 세기 | 공백 포함·제외 문자 수 카운터",
+          "description": "텍스트를 입력하면 글자수, 단어수, 바이트수를 실시간으로 확인할 수 있습니다.",
+          "isPartOf": {
+            "@id": "https://sei0.github.io/korem-ipsum/#website"
+          },
+          "inLanguage": "ko-KR"
+        },
+        {
+          "@type": "WebApplication",
+          "@id": "https://sei0.github.io/korem-ipsum/counter.html#webapp",
+          "isPartOf": {
+            "@id": "https://sei0.github.io/korem-ipsum/counter.html#webpage"
+          },
+          "name": "글자수 세기",
+          "alternateName": ["문자수 세기", "글자수 카운터", "글자수 계산기"],
+          "url": "https://sei0.github.io/korem-ipsum/counter.html",
+          "description": "텍스트를 입력하면 공백 포함·제외 글자수, 단어 수, 바이트 수, 문장 수, 문단 수, 원고지 매수를 실시간으로 계산할 수 있습니다.",
+          "applicationCategory": "UtilityApplication",
+          "operatingSystem": "Any",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "KRW"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "sei"
+          },
+          "inLanguage": "ko-KR",
+          "keywords": "글자수 세기, 글자수 계산, 문자수 세기, 공백 포함 글자수, 공백 제외 글자수, 바이트 수, 단어 수, 원고지 매수"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://sei0.github.io/korem-ipsum/counter.html#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "홈",
+              "item": "https://sei0.github.io/korem-ipsum/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "글자수 세기",
+              "item": "https://sei0.github.io/korem-ipsum/counter.html"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+    <div class="main-container">
+        <header>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link">더미 텍스트</a>
+                <span class="nav-divider">/</span>
+                <a href="review.html" class="nav-link">리뷰 생성기</a>
+                <span class="nav-divider">/</span>
+                <a href="counter.html" class="nav-link active">글자수 세기</a>
+                <span class="nav-divider">/</span>
+                <a href="blog-lorem-ipsum.html" class="nav-link">블로그</a>
+            </nav>
+            <div class="header-content">
+                <h1 class="visually-hidden">글자수 세기 - 공백 포함·제외 문자 수 카운터</h1>
+                <img src="assets/images/korem-ipsum-logo-v2.svg" alt="글자수 세기 Korem Ipsum 로고" class="main-logo">
+                <p class="subtitle">텍스트를 입력하면 글자수, 단어수, 바이트수를 실시간으로 확인할 수 있습니다.<br>공백 포함·제외 글자수, 원고지 매수까지 한 번에 계산하세요.</p>
+            </div>
+            <a href="https://github.com/sei0/korem-ipsum" target="_blank" rel="noopener noreferrer" class="github-button" aria-label="GitHub" data-tooltip="⭐ 마음에 든다면 Star 주기!">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <title>GitHub</title>
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+            </a>
+        </header>
+
+        <section class="counter-section">
+            <div class="counter-input-card">
+                <label for="textInput">텍스트 입력</label>
+                <textarea id="textInput" placeholder="여기에 텍스트를 입력하거나 붙여넣으세요"></textarea>
+                <div class="counter-actions">
+                    <button id="copyTextBtn" class="btn-primary" type="button">복사하기</button>
+                    <button id="clearTextBtn" class="btn-secondary" type="button">초기화</button>
+                </div>
+            </div>
+
+            <div class="stats-grid" aria-live="polite">
+                <article class="stat-card">
+                    <p class="stat-number" id="totalChars">0</p>
+                    <p class="stat-label">글자수 (공백 포함)</p>
+                </article>
+                <article class="stat-card">
+                    <p class="stat-number" id="charsNoSpaces">0</p>
+                    <p class="stat-label">글자수 (공백 제외)</p>
+                </article>
+                <article class="stat-card">
+                    <p class="stat-number" id="wordCount">0</p>
+                    <p class="stat-label">단어 수</p>
+                </article>
+                <article class="stat-card">
+                    <p class="stat-number" id="byteCount">0</p>
+                    <p class="stat-label">바이트 (Bytes)</p>
+                </article>
+                <article class="stat-card">
+                    <p class="stat-number" id="sentenceCount">0</p>
+                    <p class="stat-label">문장 수</p>
+                </article>
+                <article class="stat-card">
+                    <p class="stat-number" id="paragraphCount">0</p>
+                    <p class="stat-label">문단 수</p>
+                </article>
+                <article class="stat-card">
+                    <p class="stat-number" id="manuscriptPages">0</p>
+                    <p class="stat-label">원고지 매수 (200자)</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="info-section">
+            <button class="info-toggle" id="infoToggle" type="button">글자수 세기란?</button>
+            <div class="info-content" id="infoContent" style="display: none;">
+                <h2>텍스트 분량을 빠르게 확인하고 싶으신가요?</h2>
+                <p>
+                    <strong>Korem Ipsum 글자수 세기</strong>는 글 작성과 편집에 필요한 <strong>글자수 세기</strong>, <strong>글자수 계산</strong>, <strong>문자수 세기</strong>를 실시간으로 제공하는 무료 도구입니다.
+                    텍스트를 입력하거나 붙여넣으면 공백 포함·제외 글자수부터 바이트 수, 문장/문단 수까지 즉시 확인할 수 있어 작업 시간을 줄일 수 있습니다.
+                </p>
+
+                <h3>이런 분들께 추천합니다</h3>
+                <ul>
+                    <li><strong>작가/블로거</strong>: 원고 분량과 공백 포함·제외 글자수를 빠르게 확인해야 할 때</li>
+                    <li><strong>학생</strong>: 과제, 자기소개서, 리포트의 글자 수 제한을 맞춰야 할 때</li>
+                    <li><strong>마케터</strong>: 광고 문안, 상세 페이지 카피의 문자 수를 점검할 때</li>
+                    <li><strong>기획자</strong>: 콘텐츠 기획안, UX 문구 초안의 분량을 계산해야 할 때</li>
+                </ul>
+
+                <h3>왜 글자수 세기를 사용해야 할까요?</h3>
+                <ul>
+                    <li>✅ <strong>실시간 카운팅</strong>: 입력과 동시에 결과를 즉시 반영</li>
+                    <li>✅ <strong>공백 포함/제외</strong>: 두 기준을 나눠 정확한 분량 확인</li>
+                    <li>✅ <strong>바이트 수 확인</strong>: UTF-8 기준 바이트 계산 지원</li>
+                    <li>✅ <strong>원고지 매수 계산</strong>: 200자 기준 원고지 분량 자동 환산</li>
+                </ul>
+
+                <p class="final-cta">
+                    지금 바로 위 입력창에 텍스트를 넣고 <strong>글자수 세기</strong> 결과를 확인해보세요!
+                </p>
+            </div>
+        </section>
+
+        <div id="toast" class="toast">✓ 복사되었습니다!</div>
+    </div>
+
+    <footer class="main-footer">
+        <div class="copyright">2026 ⓒ sei.</div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="counter.js"></script>
+</body>
+</html>
