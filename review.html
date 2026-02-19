@@ -130,7 +130,10 @@
 <body>
     <div class="main-container">
         <header>
-            <nav class="main-nav">
+            <button class="nav-hamburger" id="navHamburger" aria-label="메뉴 열기" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="main-nav" id="mainNav">
                 <a href="index.html" class="nav-link">더미 텍스트</a>
                 <span class="nav-divider">/</span>
                 <a href="review.html" class="nav-link active">리뷰 생성기</a>
@@ -139,6 +142,7 @@
                 <span class="nav-divider">/</span>
                 <a href="blog-lorem-ipsum.html" class="nav-link">블로그</a>
             </nav>
+            <div class="nav-overlay" id="navOverlay"></div>
             <div class="header-content">
                 <h1 class="visually-hidden">더미 리뷰 생성기 - 샘플 상품 후기 생성 도구</h1>
                 <img src="assets/images/korem-ipsum-logo-v2.svg" alt="더미 리뷰 생성기 Korem Ipsum 로고" class="main-logo">
@@ -356,6 +360,7 @@
         <div class="copyright">2026 ⓒ sei.</div>
     </footer>
 
+    <script src="nav.js"></script>
     <script src="script.js"></script>
     <script src="review.js"></script>
 </body>
