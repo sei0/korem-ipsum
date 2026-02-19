@@ -1,0 +1,11 @@
+{
+  "name": "Korem Ipsum - 한글 더미 텍스트",
+  "id": "korem-ipsum-korean-dummy-text",
+  "api": "1.0.0",
+  "main": "code.js",
+  "ui": "ui.html",
+  "editorType": ["figma"],
+  "networkAccess": {
+    "allowedDomains": ["none"]
+  }
+}

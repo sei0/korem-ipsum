@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", sans-serif;
+    background: #fafafa;
+    color: #18181b;
+    padding: 20px;
+    font-size: 13px;
+    line-height: 1.5;
+    overflow-x: hidden;
+  }
+
+  .plugin-header {
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #e4e4e7;
+  }
+
+  .plugin-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #18181b;
+    margin-bottom: 4px;
+  }
+
+  .plugin-subtitle {
+    font-size: 11px;
+    color: #71717a;
+  }
+
+  .form-group {
+    margin-bottom: 16px;
+  }
+
+  .form-label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    color: #3f3f46;
+    margin-bottom: 6px;
+  }
+
+  .form-input {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 13px;
+    border: 1px solid #d4d4d8;
+    border-radius: 8px;
+    background: #fff;
+    color: #18181b;
+    font-family: inherit;
+    transition: border-color 0.2s;
+  }
+
+  .form-input:focus {
+    outline: none;
+    border-color: #f97316;
+    box-shadow: 0 0 0 2px rgba(249, 115, 22, 0.15);
+  }
+
+  .tone-selector {
+    display: flex;
+    gap: 6px;
+  }
+
+  .tone-btn {
+    flex: 1;
+    padding: 8px 4px;
+    font-size: 12px;
+    font-weight: 500;
+    border: 1px solid #d4d4d8;
+    border-radius: 8px;
+    background: #fff;
+    color: #52525b;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+    text-align: center;
+  }
+
+  .tone-btn:hover {
+    border-color: #a1a1aa;
+    background: #f4f4f5;
+  }
+
+  .tone-btn.active {
+    border-color: #f97316;
+    background: #fff7ed;
+    color: #c2410c;
+    font-weight: 600;
+  }
+
+  .mode-selector {
+    display: flex;
+    gap: 6px;
+  }
+
+  .mode-btn {
+    flex: 1;
+    padding: 8px 4px;
+    font-size: 11px;
+    font-weight: 500;
+    border: 1px solid #d4d4d8;
+    border-radius: 8px;
+    background: #fff;
+    color: #52525b;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+    text-align: center;
+    line-height: 1.3;
+  }
+
+  .mode-btn:hover {
+    border-color: #a1a1aa;
+    background: #f4f4f5;
+  }
+
+  .mode-btn.active {
+    border-color: #18181b;
+    background: #18181b;
+    color: #fafafa;
+    font-weight: 600;
+  }
+
+  .selection-info {
+    font-size: 11px;
+    color: #71717a;
+    margin-top: 6px;
+    min-height: 16px;
+  }
+
+  .selection-info.has-selection {
+    color: #16a34a;
+  }
+
+  .btn-generate {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    background: #18181b;
+    color: #fafafa;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+    margin-top: 8px;
+  }
+
+  .btn-generate:hover {
+    background: #27272a;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(24, 24, 27, 0.2);
+  }
+
+  .btn-generate:active {
+    transform: translateY(0);
+  }
+
+  .btn-generate:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+  }
+
+  .status-message {
+    text-align: center;
+    font-size: 12px;
+    margin-top: 12px;
+    min-height: 20px;
+    transition: opacity 0.3s;
+  }
+
+  .status-message.success {
+    color: #16a34a;
+  }
+
+  .status-message.error {
+    color: #dc2626;
+    white-space: pre-line;
+  }
+
+  .footer {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid #e4e4e7;
+  }
+
+  .footer a {
+    font-size: 11px;
+    color: #f97316;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .footer a:hover {
+    text-decoration: underline;
+  }
+
+  .footer-credit {
+    font-size: 10px;
+    color: #a1a1aa;
+    margin-top: 4px;
+  }
+
+  .preview-area {
+    margin-top: 12px;
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #e4e4e7;
+    border-radius: 8px;
+    font-size: 11px;
+    color: #52525b;
+    line-height: 1.6;
+    max-height: 100px;
+    overflow-y: auto;
+    display: none;
+  }
+
+  .preview-area.visible {
+    display: block;
+  }
+</style>
+</head>
+<body>
+  <div class="plugin-header">
+    <div class="plugin-title">Korem Ipsum</div>
+    <div class="plugin-subtitle">한글 더미 텍스트 생성기</div>
+  </div>
+
+  <div class="form-group">
+    <label class="form-label" for="charCount">글자 수</label>
+    <input type="number" id="charCount" class="form-input" min="10" max="10000" value="300" placeholder="10 ~ 10,000">
+  </div>
+
+  <div class="form-group">
+    <label class="form-label">말투</label>
+    <div class="tone-selector">
+      <button type="button" class="tone-btn active" data-tone="formal">합니다체</button>
+      <button type="button" class="tone-btn" data-tone="polite">해요체</button>
+      <button type="button" class="tone-btn" data-tone="casual">한다체</button>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="form-label">삽입 방식</label>
+    <div class="mode-selector">
+      <button type="button" class="mode-btn active" data-mode="new">새 텍스트<br>만들기</button>
+      <button type="button" class="mode-btn" data-mode="selection">선택한 레이어에<br>삽입</button>
+    </div>
+    <div class="selection-info" id="selectionInfo"></div>
+  </div>
+
+  <button type="button" class="btn-generate" id="generateBtn">생성하기</button>
+
+  <div class="status-message" id="statusMessage"></div>
+
+  <div class="footer">
+    <a href="https://sei0.github.io/korem-ipsum/" target="_blank">sei0.github.io/korem-ipsum</a>
+    <div class="footer-credit">2026 &copy; sei.</div>
+  </div>
+
+<script>
+  const charCountInput = document.getElementById('charCount');
+  const generateBtn = document.getElementById('generateBtn');
+  const statusMessage = document.getElementById('statusMessage');
+  const selectionInfo = document.getElementById('selectionInfo');
+
+  let selectedTone = 'formal';
+  let selectedMode = 'new';
+
+  document.querySelectorAll('.tone-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.tone-btn').forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      selectedTone = btn.dataset.tone;
+    });
+  });
+
+  document.querySelectorAll('.mode-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.mode-btn').forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      selectedMode = btn.dataset.mode;
+    });
+  });
+
+  generateBtn.addEventListener('click', () => {
+    const charCount = parseInt(charCountInput.value) || 300;
+
+    if (charCount < 10) {
+      showStatus('최소 10글자 이상 입력해주세요.', 'error');
+      return;
+    }
+
+    if (charCount > 10000) {
+      showStatus('최대 10,000글자까지 생성 가능합니다.', 'error');
+      return;
+    }
+
+    generateBtn.disabled = true;
+    generateBtn.textContent = '생성 중...';
+    statusMessage.textContent = '';
+
+    parent.postMessage({
+      pluginMessage: {
+        type: 'generate',
+        charCount: charCount,
+        tone: selectedTone,
+        mode: selectedMode
+      }
+    }, '*');
+  });
+
+  charCountInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') generateBtn.click();
+  });
+
+  window.onmessage = function(event) {
+    const msg = event.data.pluginMessage;
+    if (!msg) return;
+
+    generateBtn.disabled = false;
+    generateBtn.textContent = '생성하기';
+
+    if (msg.type === 'success') {
+      showStatus(msg.charCount + '자 생성 완료!', 'success');
+    } else if (msg.type === 'error') {
+      showStatus(msg.message, 'error');
+    } else if (msg.type === 'selection-changed') {
+      if (msg.hasTextSelection) {
+        selectionInfo.textContent = '텍스트 레이어 ' + msg.selectionCount + '개 선택됨';
+        selectionInfo.className = 'selection-info has-selection';
+      } else {
+        selectionInfo.textContent = '';
+        selectionInfo.className = 'selection-info';
+      }
+    }
+  };
+
+  function showStatus(message, type) {
+    statusMessage.textContent = message;
+    statusMessage.className = 'status-message ' + type;
+
+    if (type === 'success') {
+      setTimeout(() => {
+        statusMessage.textContent = '';
+        statusMessage.className = 'status-message';
+      }, 3000);
+    }
+  }
+</script>
+</body>
+</html>
