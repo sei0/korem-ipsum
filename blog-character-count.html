@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>글자수 세기의 모든 것 - 텍스트 분석과 실무 활용 가이드 | Korem Ipsum</title>
+    <meta name="title" content="글자수 세기의 모든 것 - 텍스트 분석과 실무 활용 가이드 | Korem Ipsum">
+    <meta name="description" content="글자수, 바이트 수, 공백 포함/제외 차이부터 SNS, 광고, 콘텐츠 작성 시 글자수 제한까지 총정리. 글자수 세기 도구 활용법을 안내합니다.">
+    <meta name="keywords" content="글자수 세기, 글자수 카운터, 글자수 확인, 바이트 수 계산, 텍스트 분석, 글자수 제한, SNS 글자수, 네이버 글자수, 카카오 글자수">
+    <meta name="author" content="sei">
+    <meta name="language" content="Korean">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+
+    <!-- Google Search Console Verification -->
+    <meta name="google-site-verification" content="4JTtYPb2wpnOnXf5bR2D577ZygeWXAWft8NVuE2z7KA" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" sizes="32x32">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favi.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favi-32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/images/favi-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/images/favi-512.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="assets/images/favi-192.png">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://sei0.github.io/korem-ipsum/blog-character-count.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://sei0.github.io/korem-ipsum/blog-character-count.html">
+    <meta property="og:title" content="글자수 세기의 모든 것 - 텍스트 분석과 실무 활용 가이드">
+    <meta property="og:description" content="글자수, 바이트 수, 공백 포함/제외 차이부터 SNS, 광고, 콘텐츠 작성 시 글자수 제한까지 총정리. 글자수 세기 도구 활용법을 안내합니다.">
+    <meta property="og:image" content="https://sei0.github.io/korem-ipsum/assets/images/korem-ipsum-logo.svg">
+    <meta property="og:image:alt" content="Korem Ipsum 로고">
+    <meta property="og:site_name" content="Korem Ipsum">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="article:published_time" content="2025-04-21">
+    <meta property="article:author" content="sei">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://sei0.github.io/korem-ipsum/blog-character-count.html">
+    <meta name="twitter:title" content="글자수 세기의 모든 것 - 텍스트 분석과 실무 활용 가이드">
+    <meta name="twitter:description" content="글자수, 바이트 수, 공백 포함/제외 차이부터 SNS, 광고, 콘텐츠 작성 시 글자수 제한까지 총정리. 글자수 세기 도구 활용법을 안내합니다.">
+    <meta name="twitter:image" content="https://sei0.github.io/korem-ipsum/assets/images/korem-ipsum-logo.svg">
+    <meta name="twitter:image:alt" content="Korem Ipsum 로고">
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Application Name -->
+    <meta name="application-name" content="Korem Ipsum">
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="blog.css">
+
+    <!-- Structured Data / JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://sei0.github.io/korem-ipsum/#website",
+          "url": "https://sei0.github.io/korem-ipsum/",
+          "name": "Korem Ipsum",
+          "description": "한글 더미 텍스트 생성기",
+          "inLanguage": "ko-KR"
+        },
+        {
+          "@type": "BlogPosting",
+          "@id": "https://sei0.github.io/korem-ipsum/blog-character-count.html#article",
+          "headline": "글자수 세기의 모든 것 - 텍스트 분석과 실무 활용 가이드",
+          "description": "글자수, 바이트 수, 공백 포함/제외 차이부터 SNS, 광고, 콘텐츠 작성 시 글자수 제한까지 총정리. 글자수 세기 도구 활용법을 안내합니다.",
+          "image": "https://sei0.github.io/korem-ipsum/assets/images/korem-ipsum-logo.svg",
+          "datePublished": "2025-04-21",
+          "dateModified": "2025-04-21",
+          "author": {
+            "@type": "Person",
+            "name": "sei"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Korem Ipsum",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://sei0.github.io/korem-ipsum/assets/images/korem-ipsum-logo.svg"
+            }
+          },
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://sei0.github.io/korem-ipsum/blog-character-count.html"
+          },
+          "inLanguage": "ko-KR",
+          "keywords": "글자수 세기, 글자수 카운터, 글자수 확인, 바이트 수 계산, 텍스트 분석, 글자수 제한"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://sei0.github.io/korem-ipsum/blog-character-count.html#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "홈",
+              "item": "https://sei0.github.io/korem-ipsum/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "블로그",
+              "item": "https://sei0.github.io/korem-ipsum/blog-character-count.html"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+    <div class="main-container">
+        <header>
+            <button type="button" class="nav-hamburger" id="navHamburger" aria-label="메뉴 열기" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="main-nav" id="mainNav">
+                <a href="index.html" class="nav-link">더미 텍스트</a>
+                <span class="nav-divider">/</span>
+                <a href="review.html" class="nav-link">리뷰 생성기</a>
+                <span class="nav-divider">/</span>
+                <a href="counter.html" class="nav-link">글자수 세기</a>
+                <span class="nav-divider">/</span>
+                <a href="blog.html" class="nav-link active">블로그</a>
+            </nav>
+            <div class="nav-overlay" id="navOverlay"></div>
+            <div class="header-content">
+                <h1 class="visually-hidden">글자수 세기의 모든 것 - 텍스트 분석과 실무 활용 가이드</h1>
+                <img src="assets/images/korem-ipsum-logo-v2.svg" alt="한글 더미 텍스트 생성기 Korem Ipsum 로고" class="main-logo">
+                <p class="subtitle">글자수, 바이트 수, 단어 수의 차이부터 플랫폼별 제한까지.<br>텍스트 분석에 필요한 모든 정보를 정리했습니다.</p>
+            </div>
+            <a href="https://github.com/sei0/korem-ipsum" target="_blank" rel="noopener noreferrer" class="github-button" aria-label="GitHub" data-tooltip="⭐ 마음에 든다면 Star 주기!">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+            </a>
+        </header>
+
+        <article class="blog-container">
+            <div class="blog-header">
+                <h1 class="blog-title">글자수 세기의 모든 것<br>텍스트 분석과 실무 활용 가이드</h1>
+                <div class="blog-meta">
+                    <time datetime="2025-04-21">2025년 4월 21일</time> · 7분 읽기
+                </div>
+            </div>
+
+            <div class="blog-content">
+                <p>
+                    글을 쓰다 보면 "이거 몇 글자지?"라는 질문을 자주 하게 됩니다. SNS에 올릴 글이 글자수 제한에 걸리지는 않는지, 메타 디스크립션이 검색 결과에서 잘리지는 않는지, 광고 문구가 규정 글자수를 넘기지는 않는지. 글자수 세기는 단순해 보이지만, 공백 포함 여부, 바이트 수 계산, 플랫폼별 제한 기준이 제각각이라 생각보다 복잡합니다. 이 글에서는 <strong>글자수 세기의 기본 개념부터 실무 활용법</strong>까지 빠짐없이 정리합니다.
+                </p>
+
+                <h2>글자수 세기가 중요한 이유</h2>
+                <p>
+                    디지털 콘텐츠의 세계에서 글자수는 단순한 숫자가 아닙니다. 트위터(현 X)에 글을 올리려면 280자 안에 메시지를 담아야 하고, 구글 검색 결과에 노출되는 메타 디스크립션은 약 155자가 적정선입니다. 네이버 블로그 제목은 너무 길면 잘리고, 카카오톡 프로필 상태 메시지도 글자수 제한이 있습니다.
+                </p>
+                <p>
+                    광고 업계에서는 더 엄격합니다. 네이버 검색 광고의 제목은 15자, 설명은 45자로 제한됩니다. 카카오 비즈보드 광고도 텍스트 영역별로 글자수 규정이 정해져 있습니다. 한 글자라도 넘기면 광고 심사에서 반려되므로, 정확한 글자수 확인은 필수입니다.
+                </p>
+                <p>
+                    학술 분야에서도 글자수는 중요합니다. 논문 초록은 보통 300자에서 500자 사이로 작성해야 하고, 학회 발표 요약문도 글자수 제한이 있습니다. 공모전 지원서, 자기소개서, 에세이 등 거의 모든 공식 문서에 글자수 조건이 붙습니다.
+                </p>
+
+                <h2>글자수 vs 바이트 수 vs 단어 수</h2>
+
+                <h3>글자수란</h3>
+                <p>
+                    글자수는 텍스트에 포함된 문자의 개수입니다. "안녕하세요"는 5글자, "Hello"도 5글자입니다. 눈에 보이는 문자 하나를 1로 세는 가장 직관적인 방식입니다. 대부분의 SNS와 콘텐츠 플랫폼이 이 기준을 사용합니다.
+                </p>
+                <p>
+                    다만 글자수를 셀 때 공백을 포함하느냐 제외하느냐에 따라 결과가 달라집니다. "안녕 하세요"는 공백 포함 6글자, 공백 제외 5글자입니다. 플랫폼마다 기준이 다르므로 어떤 기준인지 확인하는 것이 중요합니다.
+                </p>
+
+                <h3>바이트 수란</h3>
+                <p>
+                    바이트 수는 텍스트가 컴퓨터 메모리에서 차지하는 크기입니다. 같은 글자라도 인코딩 방식에 따라 바이트 수가 달라집니다. UTF-8 기준으로 영문 알파벳은 1바이트, 한글은 3바이트를 차지합니다. "Hello"는 5바이트이지만 "안녕하세요"는 15바이트입니다.
+                </p>
+                <p>
+                    EUC-KR 인코딩에서는 한글 한 글자가 2바이트입니다. 오래된 국내 시스템 중에는 여전히 EUC-KR 기준으로 바이트 수를 계산하는 곳이 있습니다. 문자 메시지(SMS)가 대표적인 예입니다. 한글 SMS는 EUC-KR 기준 80바이트, 즉 한글 40자까지가 한 건입니다. 이를 넘기면 장문 메시지(LMS)로 전환되어 요금이 달라집니다.
+                </p>
+
+                <h3>단어 수란</h3>
+                <p>
+                    단어 수는 공백으로 구분된 단어의 개수입니다. 영어권에서는 글자수보다 단어 수를 더 많이 사용합니다. 영문 에세이의 분량을 "500 words"처럼 단어 수로 표현하는 것이 일반적입니다.
+                </p>
+                <p>
+                    한국어에서는 단어 수보다 글자수를 기준으로 삼는 경우가 많습니다. 한국어의 단어 경계가 영어만큼 명확하지 않기 때문입니다. "나는 학교에 간다"를 단어로 세면 4개이지만, "학교에"를 "학교"와 "에"로 분리할 것인지에 따라 해석이 달라질 수 있습니다.
+                </p>
+
+                <div class="highlight-box">
+                    <p><strong>💡 정리하면</strong> 글자수는 눈에 보이는 문자 개수, 바이트 수는 컴퓨터가 저장하는 데이터 크기, 단어 수는 공백으로 구분된 덩어리 개수입니다. 같은 텍스트라도 세 가지 수치가 모두 다를 수 있으므로, 어떤 기준이 필요한지 먼저 파악해야 합니다.</p>
+                </div>
+
+                <h2>공백 포함과 공백 제외의 차이</h2>
+                <p>
+                    글자수를 셀 때 가장 흔한 혼란이 공백 처리입니다. "오늘 날씨가 좋습니다"라는 문장은 공백 포함 10글자, 공백 제외 8글자입니다. 어떤 기준을 적용하느냐에 따라 결과가 20% 이상 차이 날 수 있습니다.
+                </p>
+                <p>
+                    일반적으로 SNS 플랫폼은 공백을 포함해서 글자수를 셉니다. 트위터의 280자 제한에는 공백도 포함됩니다. 반면 일부 공모전이나 학술 기관에서는 "공백 제외 몇 자 이내"라고 명시하는 경우가 있습니다. 자기소개서 작성 시 "공백 포함 500자"와 "공백 제외 500자"는 실제로 쓸 수 있는 분량이 상당히 다릅니다.
+                </p>
+                <p>
+                    줄바꿈 문자도 고려해야 합니다. 엔터를 치면 생기는 줄바꿈은 눈에 보이지 않지만 문자로 카운트되는 경우가 있습니다. 플랫폼에 따라 줄바꿈을 1글자로 세기도 하고, 2글자(캐리지 리턴 + 라인 피드)로 세기도 합니다. 정확한 글자수가 중요한 상황이라면 줄바꿈 처리 방식도 확인해야 합니다.
+                </p>
+
+                <h2>주요 플랫폼별 글자수 제한 정리</h2>
+
+                <h3>SNS 플랫폼</h3>
+                <ul>
+                    <li><strong>트위터(X)</strong>: 게시글 280자 (한글, 일본어, 중국어는 1자가 2자로 카운트되어 실질적으로 140자)</li>
+                    <li><strong>인스타그램</strong>: 게시글 캡션 2,200자, 프로필 소개 150자, 댓글 1,000자</li>
+                    <li><strong>페이스북</strong>: 게시글 63,206자, 댓글 8,000자</li>
+                    <li><strong>카카오톡</strong>: 일반 메시지 약 10,000자, 프로필 상태 메시지 60자</li>
+                    <li><strong>네이버 블로그</strong>: 제목 100자, 본문 제한 없음 (단, 검색 결과에서 제목은 약 35자까지 노출)</li>
+                </ul>
+
+                <h3>검색 엔진과 광고</h3>
+                <ul>
+                    <li><strong>구글 메타 디스크립션</strong>: 약 155자 (한글 기준, 픽셀 너비에 따라 변동)</li>
+                    <li><strong>구글 검색 제목</strong>: 약 30자 (한글 기준)</li>
+                    <li><strong>네이버 검색 제목</strong>: 약 35자까지 노출</li>
+                    <li><strong>네이버 검색 광고 제목</strong>: 15자</li>
+                    <li><strong>네이버 검색 광고 설명</strong>: 45자</li>
+                    <li><strong>카카오 키워드 광고 제목</strong>: 25자</li>
+                </ul>
+
+                <h3>문서와 학술</h3>
+                <ul>
+                    <li><strong>SMS 문자 메시지</strong>: 한글 40자 (80바이트), 초과 시 LMS로 전환</li>
+                    <li><strong>논문 초록</strong>: 보통 300자에서 500자 (학회별 상이)</li>
+                    <li><strong>자기소개서</strong>: 항목당 500자에서 1,000자가 일반적</li>
+                    <li><strong>이력서 경력 기술</strong>: 항목당 200자에서 500자 권장</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <p><strong>💡 주의사항</strong> 위 수치는 2025년 4월 기준이며, 플랫폼 정책 변경에 따라 달라질 수 있습니다. 중요한 콘텐츠를 작성할 때는 해당 플랫폼의 최신 가이드라인을 직접 확인하세요.</p>
+                </div>
+
+                <h2>글자수 세기 도구 활용법</h2>
+                <p>
+                    글자수를 직접 세는 건 비현실적입니다. 짧은 문장이야 눈으로 셀 수 있지만, 수백 자가 넘어가면 도구의 도움이 필요합니다. 워드 프로세서에 내장된 글자수 세기 기능을 쓸 수도 있지만, 빠르게 확인하고 싶을 때는 웹 기반 도구가 편리합니다.
+                </p>
+                <p>
+                    <strong>Korem Ipsum의 글자수 세기</strong> 기능은 텍스트를 붙여넣으면 공백 포함 글자수, 공백 제외 글자수, 바이트 수를 한눈에 보여줍니다. 별도의 프로그램 설치 없이 브라우저에서 바로 사용할 수 있고, 입력한 텍스트가 서버로 전송되지 않아 개인정보 걱정도 없습니다.
+                </p>
+                <p>
+                    특히 SNS 게시글이나 광고 문구를 작성할 때 유용합니다. 글을 쓰면서 실시간으로 글자수를 확인할 수 있으므로, 제한에 맞춰 문장을 다듬는 과정이 훨씬 수월해집니다. 메타 디스크립션이나 광고 제목처럼 한 글자가 중요한 상황에서 정확한 카운트는 필수입니다.
+                </p>
+
+                <h2>콘텐츠 작성 시 글자수 최적화 팁</h2>
+
+                <h3>SNS 게시글 작성</h3>
+                <p>
+                    트위터(X)에서 한글은 1자가 2자로 카운트되므로 실질적으로 140자까지 쓸 수 있습니다. 140자 안에 핵심 메시지를 담으려면 군더더기를 과감히 빼야 합니다. "~하는 것이 좋습니다"를 "~하세요"로, "~라고 할 수 있습니다"를 "~입니다"로 줄이는 식입니다.
+                </p>
+                <p>
+                    인스타그램 캡션은 2,200자로 넉넉하지만, 피드에서 보이는 첫 줄은 약 125자입니다. "더 보기"를 누르지 않아도 핵심이 전달되도록 첫 125자에 가장 중요한 내용을 배치하세요. 해시태그는 글자수에 포함되므로 본문과 해시태그의 비율도 고려해야 합니다.
+                </p>
+
+                <h3>블로그와 웹 콘텐츠</h3>
+                <p>
+                    블로그 글의 적정 분량에 대해서는 다양한 의견이 있지만, SEO 관점에서 1,500자 이상의 글이 검색 상위에 노출되는 경향이 있습니다. 물론 글자수만 채운다고 좋은 글이 되는 건 아닙니다. 핵심은 독자가 찾는 정보를 충분히 담는 것입니다.
+                </p>
+                <p>
+                    웹 콘텐츠에서는 문단 길이도 중요합니다. 모바일 화면에서 한 문단이 너무 길면 읽기 부담스럽습니다. 한 문단을 3~4문장, 약 150자에서 200자 정도로 유지하면 모바일에서도 읽기 편한 레이아웃이 됩니다.
+                </p>
+
+                <h3>광고 문구 작성</h3>
+                <p>
+                    광고 문구는 글자수 제한이 엄격합니다. 네이버 검색 광고 제목 15자 안에 브랜드명, 핵심 키워드, 행동 유도 문구를 모두 넣어야 합니다. 글자수가 부족하면 약어를 쓰거나 조사를 생략하는 방법을 고려해보세요. "무료 배송 진행 중"보다 "무료배송 중"이 3글자를 아낍니다.
+                </p>
+                <p>
+                    설명문 45자에서는 제목에서 다 전달하지 못한 혜택이나 차별점을 보충합니다. 숫자를 활용하면 적은 글자수로 구체적인 정보를 전달할 수 있습니다. "많은 할인"보다 "최대 50% 할인"이 더 효과적이면서 글자수도 비슷합니다.
+                </p>
+
+                <h2>SEO와 글자수의 관계</h2>
+
+                <h3>메타 디스크립션 최적 길이</h3>
+                <p>
+                    메타 디스크립션은 검색 결과 페이지에서 제목 아래에 표시되는 설명문입니다. 구글은 약 155자(한글 기준)까지 표시하고, 그 이상은 말줄임표로 잘립니다. 네이버는 약 80자 정도를 표시합니다.
+                </p>
+                <p>
+                    최적의 메타 디스크립션 길이는 80자에서 155자 사이입니다. 너무 짧으면 정보가 부족해 클릭률이 떨어지고, 너무 길면 잘려서 메시지가 불완전해집니다. 핵심 키워드를 앞부분에 배치하고, 사용자가 클릭하고 싶어지는 문구로 마무리하는 것이 좋습니다.
+                </p>
+
+                <h3>제목 태그 최적 길이</h3>
+                <p>
+                    HTML의 title 태그는 검색 결과에서 가장 눈에 띄는 요소입니다. 구글은 약 30자(한글 기준)까지 표시하고, 네이버는 약 35자까지 보여줍니다. 제목이 이 길이를 넘기면 잘려서 표시되므로, 핵심 키워드와 브랜드명을 30자 안에 담는 것이 이상적입니다.
+                </p>
+                <p>
+                    제목 태그에서 흔히 하는 실수가 키워드를 과도하게 나열하는 것입니다. "글자수 세기 | 글자수 카운터 | 글자수 확인 | 바이트 수"처럼 키워드만 나열하면 검색 엔진이 스팸으로 판단할 수 있습니다. 자연스러운 문장 형태로 핵심 키워드를 포함시키는 것이 효과적입니다.
+                </p>
+
+                <h3>본문 길이와 검색 순위</h3>
+                <p>
+                    검색 엔진은 사용자의 질문에 충분히 답하는 콘텐츠를 선호합니다. 일반적으로 1,500자 이상의 글이 검색 상위에 노출되는 경향이 있지만, 이것이 "길게 쓰면 무조건 좋다"는 의미는 아닙니다. 500자로 충분히 답할 수 있는 질문에 2,000자를 쓰면 오히려 사용자 경험이 나빠집니다.
+                </p>
+                <p>
+                    중요한 건 글자수 자체가 아니라 콘텐츠의 완결성입니다. 주제를 충분히 다루되 불필요한 반복이나 군더더기는 빼세요. 글자수 세기 도구로 전체 분량을 확인하면서, 각 섹션이 적절한 비중을 차지하는지 점검하는 습관이 도움됩니다.
+                </p>
+
+                <div class="cta-box">
+                    <h3>글자수 확인과 더미 텍스트 생성, 한 곳에서</h3>
+                    <p>Korem Ipsum에서 글자수 세기와 한글 더미 텍스트 생성을 모두 무료로 이용할 수 있습니다.<br>콘텐츠 작성 전 더미 텍스트로 레이아웃을 잡고, 완성 후 글자수를 확인해보세요.</p>
+                    <a href="counter.html" class="cta-button">글자수 세기 바로가기 →</a>
+                    <a href="index.html" class="cta-button" style="margin-left: 0.75rem;">한글 더미 텍스트 생성하기 →</a>
+                </div>
+
+                <h2>마치며</h2>
+                <p>
+                    글자수 세기는 단순한 작업처럼 보이지만, 공백 포함 여부, 바이트 수 차이, 플랫폼별 제한 기준까지 고려하면 꽤 복잡한 영역입니다. SNS 게시글 하나를 올리더라도 글자수 제한을 알고 있으면 더 효과적인 메시지를 만들 수 있고, SEO를 위한 메타 태그 작성에서도 적정 길이를 지키면 검색 노출에 유리합니다.
+                </p>
+                <p>
+                    글을 쓸 때마다 글자수를 의식할 필요는 없습니다. 하지만 플랫폼에 올리기 전, 광고를 집행하기 전, 공식 문서를 제출하기 전에는 반드시 확인하세요. 한 글자 차이로 메시지가 잘리거나 광고가 반려되는 일을 미리 막을 수 있습니다.
+                </p>
+            </div>
+        </article>
+    </div>
+
+    <footer class="main-footer">
+        <div class="copyright">2026 ⓒ sei.</div>
+    </footer>
+
+    <script src="nav.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Figma에서 한글 더미 텍스트 사용하기 - 플러그인 활용 가이드 | Korem Ipsum</title>
+    <meta name="title" content="Figma에서 한글 더미 텍스트 사용하기 - 플러그인 활용 가이드 | Korem Ipsum">
+    <meta name="description" content="Figma에서 한글 더미 텍스트를 빠르게 삽입하는 방법. Korem Ipsum Figma 플러그인 설치부터 활용까지 단계별로 안내합니다.">
+    <meta name="keywords" content="Figma 한글 더미 텍스트, Figma 플러그인, Figma lorem ipsum, Figma 한글, 디자인 도구 더미 텍스트, Figma 텍스트 삽입, Korem Ipsum Figma">
+    <meta name="author" content="sei">
+    <meta name="language" content="Korean">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+
+    <!-- Google Search Console Verification -->
+    <meta name="google-site-verification" content="4JTtYPb2wpnOnXf5bR2D577ZygeWXAWft8NVuE2z7KA" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" sizes="32x32">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favi.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favi-32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/images/favi-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/images/favi-512.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="assets/images/favi-192.png">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://sei0.github.io/korem-ipsum/blog-figma-dummy-text.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://sei0.github.io/korem-ipsum/blog-figma-dummy-text.html">
+    <meta property="og:title" content="Figma에서 한글 더미 텍스트 사용하기 - 플러그인 활용 가이드">
+    <meta property="og:description" content="Figma에서 한글 더미 텍스트를 빠르게 삽입하는 방법. Korem Ipsum Figma 플러그인 설치부터 활용까지 단계별로 안내합니다.">
+    <meta property="og:image" content="https://sei0.github.io/korem-ipsum/assets/images/korem-ipsum-logo.svg">
+    <meta property="og:image:alt" content="Korem Ipsum 로고">
+    <meta property="og:site_name" content="Korem Ipsum">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="article:published_time" content="2025-03-10">
+    <meta property="article:author" content="sei">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://sei0.github.io/korem-ipsum/blog-figma-dummy-text.html">
+    <meta name="twitter:title" content="Figma에서 한글 더미 텍스트 사용하기 - 플러그인 활용 가이드">
+    <meta name="twitter:description" content="Figma에서 한글 더미 텍스트를 빠르게 삽입하는 방법. Korem Ipsum Figma 플러그인 설치부터 활용까지 단계별로 안내합니다.">
+    <meta name="twitter:image" content="https://sei0.github.io/korem-ipsum/assets/images/korem-ipsum-logo.svg">
+    <meta name="twitter:image:alt" content="Korem Ipsum 로고">
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Application Name -->
+    <meta name="application-name" content="Korem Ipsum">
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="blog.css">
+
+    <!-- Structured Data / JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://sei0.github.io/korem-ipsum/#website",
+          "url": "https://sei0.github.io/korem-ipsum/",
+          "name": "Korem Ipsum",
+          "description": "한글 더미 텍스트 생성기",
+          "inLanguage": "ko-KR"
+        },
+        {
+          "@type": "BlogPosting",
+          "@id": "https://sei0.github.io/korem-ipsum/blog-figma-dummy-text.html#article",
+          "headline": "Figma에서 한글 더미 텍스트 사용하기 - 플러그인 활용 가이드",
+          "description": "Figma에서 한글 더미 텍스트를 빠르게 삽입하는 방법. Korem Ipsum Figma 플러그인 설치부터 활용까지 단계별로 안내합니다.",
+          "image": "https://sei0.github.io/korem-ipsum/assets/images/korem-ipsum-logo.svg",
+          "datePublished": "2025-03-10",
+          "dateModified": "2025-03-10",
+          "author": {
+            "@type": "Person",
+            "name": "sei"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Korem Ipsum",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://sei0.github.io/korem-ipsum/assets/images/korem-ipsum-logo.svg"
+            }
+          },
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://sei0.github.io/korem-ipsum/blog-figma-dummy-text.html"
+          },
+          "inLanguage": "ko-KR",
+          "keywords": "Figma 한글 더미 텍스트, Figma 플러그인, Figma lorem ipsum, Figma 한글, 디자인 도구 더미 텍스트"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://sei0.github.io/korem-ipsum/blog-figma-dummy-text.html#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "홈",
+              "item": "https://sei0.github.io/korem-ipsum/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "블로그",
+              "item": "https://sei0.github.io/korem-ipsum/blog-figma-dummy-text.html"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+    <div class="main-container">
+        <header>
+            <button type="button" class="nav-hamburger" id="navHamburger" aria-label="메뉴 열기" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="main-nav" id="mainNav">
+                <a href="index.html" class="nav-link">더미 텍스트</a>
+                <span class="nav-divider">/</span>
+                <a href="review.html" class="nav-link">리뷰 생성기</a>
+                <span class="nav-divider">/</span>
+                <a href="counter.html" class="nav-link">글자수 세기</a>
+                <span class="nav-divider">/</span>
+                <a href="blog.html" class="nav-link active">블로그</a>
+            </nav>
+            <div class="nav-overlay" id="navOverlay"></div>
+            <div class="header-content">
+                <h1 class="visually-hidden">Figma에서 한글 더미 텍스트 사용하기 - 플러그인 활용 가이드</h1>
+                <img src="assets/images/korem-ipsum-logo-v2.svg" alt="한글 더미 텍스트 생성기 Korem Ipsum 로고" class="main-logo">
+                <p class="subtitle">Figma에서 한글 더미 텍스트를 빠르게 삽입하는 방법.<br>플러그인 설치부터 실무 활용까지 단계별로 안내합니다.</p>
+            </div>
+            <a href="https://github.com/sei0/korem-ipsum" target="_blank" rel="noopener noreferrer" class="github-button" aria-label="GitHub" data-tooltip="⭐ 마음에 든다면 Star 주기!">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+            </a>
+        </header>
+
+        <article class="blog-container">
+            <div class="blog-header">
+                <h1 class="blog-title">Figma에서 한글 더미 텍스트 사용하기<br>플러그인 활용 가이드</h1>
+                <div class="blog-meta">
+                    <time datetime="2025-03-10">2025년 3월 10일</time> · 5분 읽기
+                </div>
+            </div>
+
+            <div class="blog-content">
+                <p>
+                    Figma로 UI를 디자인하다 보면 텍스트 영역을 채워야 할 순간이 반드시 찾아옵니다. 버튼 라벨이나 제목처럼 짧은 텍스트는 직접 입력하면 되지만, 본문 영역이나 카드 리스트처럼 긴 텍스트가 필요한 곳은 이야기가 다릅니다. 매번 적당한 한글 문장을 떠올려 타이핑하는 건 생각보다 시간이 많이 드는 작업입니다. 오늘은 <strong>Figma에서 한글 더미 텍스트를 빠르고 효율적으로 삽입하는 방법</strong>을 소개합니다.
+                </p>
+
+                <h2>Figma에서 더미 텍스트가 필요한 순간</h2>
+                <p>
+                    디자인 작업의 상당 부분은 텍스트와 관련되어 있습니다. 뉴스 피드 화면을 디자인한다고 생각해보세요. 기사 제목, 요약문, 작성자 이름, 날짜, 댓글 내용까지 수십 개의 텍스트 레이어가 필요합니다. 이 모든 곳에 실제 콘텐츠를 넣기 전, 레이아웃이 제대로 작동하는지 확인하려면 임시 텍스트가 필수입니다.
+                </p>
+                <p>
+                    특히 다음과 같은 상황에서 더미 텍스트의 필요성이 커집니다. 첫째, 반응형 레이아웃을 테스트할 때입니다. 텍스트 길이에 따라 카드 높이가 어떻게 변하는지, 줄바꿈이 자연스러운지 확인해야 합니다. 둘째, 클라이언트에게 시안을 보여줄 때입니다. 빈 텍스트 영역보다는 한글이 채워진 화면이 훨씬 완성도 높아 보입니다. 셋째, 디자인 시스템의 컴포넌트를 만들 때입니다. 다양한 길이의 텍스트가 들어가도 깨지지 않는 컴포넌트를 설계하려면 여러 길이의 텍스트로 테스트해야 합니다.
+                </p>
+
+                <h2>기존 방법의 한계</h2>
+
+                <h3>수동 복사-붙여넣기의 번거로움</h3>
+                <p>
+                    가장 원시적인 방법은 웹에서 적당한 한글 텍스트를 찾아 복사하는 것입니다. 뉴스 기사나 위키백과 문서를 열어 원하는 길이만큼 텍스트를 선택하고, Figma에 붙여넣습니다. 간단해 보이지만 실제로는 꽤 번거롭습니다. 브라우저와 Figma 사이를 오가야 하고, 텍스트 길이를 맞추기 어렵고, 복사한 텍스트에 원치 않는 서식이 따라오기도 합니다. 무엇보다 실제 뉴스 기사를 사용하면 클라이언트가 내용에 신경 쓰느라 디자인에 집중하지 못하는 문제가 생깁니다.
+                </p>
+
+                <h3>영문 Lorem Ipsum 플러그인의 아쉬움</h3>
+                <p>
+                    Figma 커뮤니티에는 Lorem Ipsum 텍스트를 자동으로 삽입해주는 플러그인이 여럿 있습니다. 클릭 한 번으로 텍스트를 채울 수 있어 편리하지만, 한글 프로젝트에서는 근본적인 한계가 있습니다. 라틴 알파벳과 한글은 글자 폭이 다릅니다. 영문 Lorem Ipsum으로 레이아웃을 잡으면 한글을 넣었을 때 줄바꿈 위치가 달라지고, 텍스트 영역의 높이도 변합니다. 결국 나중에 한글 콘텐츠를 넣으면서 레이아웃을 다시 조정해야 하는 이중 작업이 발생합니다.
+                </p>
+                <p>
+                    한글은 음절 단위로 줄바꿈이 가능한 반면, 영문은 단어 단위로 줄바꿈됩니다. 이 차이 때문에 같은 너비의 텍스트 박스라도 한글과 영문의 줄 수가 달라집니다. 디자인 단계에서부터 한글 텍스트를 사용해야 정확한 레이아웃을 잡을 수 있는 이유입니다.
+                </p>
+
+                <div class="highlight-box">
+                    <p><strong>💡 알고 계셨나요?</strong> 한글 한 글자의 평균 폭은 영문 알파벳 약 1.5~2배에 해당합니다. 같은 글자 수라도 한글이 차지하는 공간이 훨씬 넓기 때문에, 영문 더미 텍스트로 잡은 레이아웃은 한글 콘텐츠를 넣는 순간 무너질 수 있습니다.</p>
+                </div>
+
+                <h2>Korem Ipsum Figma 플러그인 소개</h2>
+                <p>
+                    이런 문제를 해결하기 위해 만들어진 것이 <strong>Korem Ipsum Figma 플러그인</strong>입니다. 이 플러그인은 Figma 안에서 바로 자연스러운 한글 더미 텍스트를 생성하고 삽입할 수 있게 해줍니다. 웹사이트에서 텍스트를 복사해올 필요 없이, Figma를 떠나지 않고도 원하는 길이와 말투의 한글 텍스트를 즉시 만들 수 있습니다.
+                </p>
+                <p>
+                    Korem Ipsum의 텍스트 생성 알고리즘은 실제 한글 사용 빈도를 반영합니다. 초성, 중성, 종성의 출현 확률을 한국어 통계에 맞춰 설정했기 때문에, 생성된 텍스트가 실제 한글 문장과 비슷한 시각적 밀도를 가집니다. 단순히 "가나다라"를 반복하는 것과는 차원이 다른 자연스러움을 제공합니다.
+                </p>
+
+                <h3>플러그인 설치 방법</h3>
+                <p>
+                    설치 과정은 간단합니다. Figma 데스크톱 앱을 열고, 상단 메뉴에서 Plugins 항목을 선택합니다. 검색창에 "Korem Ipsum"을 입력하면 플러그인이 나타납니다. Install 버튼을 클릭하면 설치가 완료됩니다. 설치 후에는 캔버스에서 마우스 오른쪽 버튼을 클릭하고 Plugins 메뉴에서 Korem Ipsum을 선택하거나, 단축키로 빠르게 실행할 수 있습니다.
+                </p>
+                <p>
+                    로컬 개발 환경에서 직접 플러그인을 빌드해 사용할 수도 있습니다. GitHub 저장소에서 소스 코드를 받은 뒤, Figma Desktop에서 Plugins > Development > Import plugin from manifest 경로로 manifest.json 파일을 불러오면 됩니다. 이 방법은 플러그인을 커스터마이징하고 싶은 개발자에게 적합합니다.
+                </p>
+
+                <h2>사용법 단계별 안내</h2>
+
+                <h3>1단계: 글자 수 설정</h3>
+                <p>
+                    플러그인을 실행하면 가장 먼저 글자 수를 설정하는 입력 필드가 보입니다. 10자부터 10,000자까지 원하는 길이를 지정할 수 있습니다. 카드 제목처럼 짧은 텍스트가 필요하면 20~30자, 본문 영역이라면 200~500자, 긴 아티클 페이지를 테스트한다면 1,000자 이상을 입력하면 됩니다. 숫자를 직접 타이핑하거나 슬라이더를 움직여 조절할 수 있습니다.
+                </p>
+
+                <h3>2단계: 말투 선택</h3>
+                <p>
+                    Korem Ipsum은 세 가지 말투를 지원합니다. <strong>합니다체</strong>는 격식 있는 문어체로, 공식 웹사이트나 기업 서비스 디자인에 적합합니다. <strong>해요체</strong>는 친근한 구어체로, 블로그나 커뮤니티 서비스에 잘 어울립니다. <strong>한다체</strong>는 평어체로, 뉴스 기사나 백과사전 스타일의 콘텐츠에 맞습니다. 디자인하는 서비스의 톤앤매너에 맞는 말투를 선택하면 시안의 완성도가 한층 올라갑니다.
+                </p>
+
+                <h3>3단계: 텍스트 삽입</h3>
+                <p>
+                    글자 수와 말투를 설정한 뒤 생성 버튼을 누르면 한글 더미 텍스트가 만들어집니다. 이 텍스트를 Figma 캔버스에 삽입하는 방법은 두 가지입니다. 텍스트 레이어를 미리 선택해둔 상태라면, 해당 레이어의 내용이 생성된 텍스트로 교체됩니다. 아무것도 선택하지 않은 상태라면, 새로운 텍스트 레이어가 캔버스에 생성됩니다. 여러 텍스트 레이어를 동시에 선택한 뒤 실행하면, 각 레이어에 서로 다른 텍스트가 삽입되어 더욱 자연스러운 목업을 만들 수 있습니다.
+                </p>
+
+                <h2>실무 활용 팁</h2>
+
+                <h3>Auto Layout과 함께 사용하기</h3>
+                <p>
+                    Figma의 Auto Layout은 콘텐츠 크기에 따라 프레임이 자동으로 조절되는 강력한 기능입니다. 한글 더미 텍스트와 Auto Layout을 함께 사용하면 텍스트 길이 변화에 따른 레이아웃 반응을 실시간으로 확인할 수 있습니다. 예를 들어, 카드 컴포넌트의 설명 텍스트를 50자, 100자, 200자로 바꿔가며 카드 높이가 어떻게 변하는지 테스트해보세요. 텍스트가 넘칠 때 말줄임표가 제대로 작동하는지, 최소 높이와 최대 높이 설정이 적절한지 확인할 수 있습니다.
+                </p>
+
+                <h3>컴포넌트에 적용하기</h3>
+                <p>
+                    디자인 시스템을 구축할 때 컴포넌트의 텍스트 영역에 한글 더미 텍스트를 넣어두면 여러 이점이 있습니다. 팀원들이 컴포넌트를 사용할 때 한글 기준의 레이아웃을 바로 확인할 수 있고, 인스턴스를 만들 때마다 텍스트를 일일이 바꿀 필요가 줄어듭니다. 특히 Variants를 활용해 짧은 텍스트 버전과 긴 텍스트 버전을 만들어두면, 다양한 콘텐츠 길이에 대응하는 컴포넌트를 설계하는 데 큰 도움이 됩니다.
+                </p>
+
+                <h3>다양한 길이로 엣지케이스 테스트하기</h3>
+                <p>
+                    실제 서비스에서는 사용자가 입력하는 텍스트 길이를 예측하기 어렵습니다. 사용자 이름이 두 글자일 수도 있고 열 글자일 수도 있습니다. 상품 설명이 한 줄일 수도 있고 열 줄일 수도 있습니다. Korem Ipsum으로 다양한 길이의 텍스트를 생성해 이런 엣지케이스를 미리 테스트하면, 개발 단계에서 발견되는 레이아웃 버그를 디자인 단계에서 잡을 수 있습니다. 이는 디자이너와 개발자 사이의 커뮤니케이션 비용을 크게 줄여줍니다.
+                </p>
+                <p>
+                    구체적으로는 다음과 같은 시나리오를 테스트해보는 것을 추천합니다. 텍스트가 한 줄만 있을 때와 여러 줄일 때의 정렬 상태, 매우 긴 단어나 URL이 포함되었을 때의 줄바꿈 처리, 텍스트가 비어 있을 때의 빈 상태(empty state) 표시, 그리고 텍스트와 아이콘이 함께 있을 때의 간격 유지 여부 등입니다.
+                </p>
+
+                <div class="highlight-box">
+                    <p><strong>💡 실무 팁</strong> 컴포넌트를 만들 때 "최소 텍스트"와 "최대 텍스트" 두 가지 버전을 항상 준비해두세요. 최소 버전은 10~20자, 최대 버전은 해당 영역에서 현실적으로 가능한 최대 길이로 설정합니다. 이 두 극단 사이에서 레이아웃이 안정적으로 유지되면, 대부분의 실제 콘텐츠에서도 문제가 없습니다.</p>
+                </div>
+
+                <h2>다른 디자인 도구에서의 활용 방법</h2>
+
+                <h3>Figma 외 도구에서 한글 더미 텍스트 사용하기</h3>
+                <p>
+                    Figma 플러그인을 사용할 수 없는 환경이라면 Korem Ipsum 웹사이트를 활용하면 됩니다. 브라우저에서 <strong>Korem Ipsum 웹사이트</strong>에 접속해 원하는 글자 수와 말투를 선택하고 생성 버튼을 누르면, 즉시 한글 더미 텍스트가 만들어집니다. 생성된 텍스트를 클릭하면 클립보드에 복사되므로, 어떤 디자인 도구에서든 붙여넣기만 하면 됩니다.
+                </p>
+
+                <h3>Sketch에서 활용하기</h3>
+                <p>
+                    Sketch 사용자라면 웹사이트에서 생성한 텍스트를 복사해 사용하는 방법이 가장 간편합니다. Sketch의 Data 기능을 활용하면 더 효율적입니다. 미리 여러 길이의 한글 더미 텍스트를 텍스트 파일로 저장해두고, Sketch의 Data Source로 등록하면 심볼 인스턴스에 자동으로 다른 텍스트를 채울 수 있습니다. 반복되는 리스트 아이템이나 카드 컴포넌트를 디자인할 때 특히 유용합니다.
+                </p>
+
+                <h3>Adobe XD에서 활용하기</h3>
+                <p>
+                    Adobe XD에서도 마찬가지로 웹사이트에서 생성한 텍스트를 복사해 사용할 수 있습니다. XD의 Repeat Grid 기능과 함께 사용하면 효과적입니다. 하나의 카드에 한글 더미 텍스트를 넣고 Repeat Grid로 복제하면, 각 카드에 서로 다른 길이의 텍스트를 넣어 자연스러운 리스트 화면을 만들 수 있습니다. 텍스트 파일을 드래그 앤 드롭으로 불러오는 기능도 활용해보세요.
+                </p>
+
+                <h3>Framer와 Webflow에서 활용하기</h3>
+                <p>
+                    코드 기반 디자인 도구인 Framer나 Webflow에서는 실제 웹 환경과 동일한 조건에서 한글 텍스트를 테스트할 수 있다는 장점이 있습니다. 웹 폰트 렌더링, CSS 줄바꿈 규칙, 반응형 브레이크포인트에서의 텍스트 흐름을 실시간으로 확인할 수 있습니다. Korem Ipsum 웹사이트에서 생성한 텍스트를 붙여넣으면, 실제 배포 환경과 거의 동일한 결과를 미리 볼 수 있습니다.
+                </p>
+
+                <h2>효과적인 더미 텍스트 사용을 위한 체크리스트</h2>
+                <p>
+                    마지막으로, Figma를 비롯한 디자인 도구에서 한글 더미 텍스트를 효과적으로 사용하기 위한 체크리스트를 정리합니다.
+                </p>
+                <ul>
+                    <li><strong>한글 프로젝트에는 반드시 한글 더미 텍스트를 사용하세요.</strong> 영문 Lorem Ipsum은 한글 레이아웃을 정확히 반영하지 못합니다</li>
+                    <li><strong>서비스의 톤앤매너에 맞는 말투를 선택하세요.</strong> 합니다체, 해요체, 한다체 중 프로젝트에 맞는 것을 고르면 시안의 현실감이 높아집니다</li>
+                    <li><strong>다양한 길이로 테스트하세요.</strong> 최소, 평균, 최대 길이의 텍스트를 모두 넣어보고 레이아웃이 안정적인지 확인하세요</li>
+                    <li><strong>Auto Layout과 함께 활용하세요.</strong> 텍스트 길이 변화에 따른 레이아웃 반응을 자동으로 확인할 수 있습니다</li>
+                    <li><strong>컴포넌트 설계 시 텍스트 엣지케이스를 고려하세요.</strong> 빈 텍스트, 한 줄 텍스트, 매우 긴 텍스트 등 극단적인 경우를 미리 대비하세요</li>
+                    <li><strong>팀 전체가 같은 도구를 사용하세요.</strong> 더미 텍스트 생성 방법을 팀 내에서 통일하면 일관된 디자인 결과물을 얻을 수 있습니다</li>
+                </ul>
+
+                <div class="cta-box">
+                    <h3>한글 더미 텍스트가 필요하신가요?</h3>
+                    <p>Korem Ipsum은 자연스러운 한글 더미 텍스트를 즉시 생성해주는 무료 도구입니다.<br>Figma 플러그인으로 디자인 작업 흐름을 끊지 않고 바로 사용해보세요.</p>
+                    <a href="index.html" class="cta-button">한글 더미 텍스트 생성하기 →</a>
+                </div>
+
+                <h2>마치며</h2>
+                <p>
+                    한글 UI를 디자인할 때 영문 더미 텍스트를 사용하는 것은 안경 없이 시력 검사를 하는 것과 비슷합니다. 대략적인 형태는 보이지만 정확한 결과를 얻을 수 없습니다. Figma에서 한글 더미 텍스트를 사용하면 디자인 단계에서부터 실제 서비스에 가까운 화면을 만들 수 있고, 이는 개발 과정에서의 수정 비용을 크게 줄여줍니다.
+                </p>
+                <p>
+                    Korem Ipsum Figma 플러그인을 설치하고, 다음 프로젝트부터 한글 더미 텍스트로 작업해보세요. 작은 변화지만 디자인 품질과 작업 효율 모두에서 확실한 차이를 느낄 수 있을 것입니다.
+                </p>
+            </div>
+        </article>
+    </div>
+
+    <footer class="main-footer">
+        <div class="copyright">2026 ⓒ sei.</div>
+    </footer>
+
+    <script src="nav.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
