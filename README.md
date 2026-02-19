@@ -13,6 +13,15 @@
 - **문단 구분**: 적절한 문단 나눔으로 가독성 향상
 - **중복 방지**: 문장 내 명사 중복 방지
 
+## Figma Plugin
+
+Figma에서 바로 한글 더미 텍스트를 생성할 수 있는 플러그인입니다.
+
+- `figma-plugin/` 디렉토리에 소스 코드가 있습니다
+- Figma Desktop > Plugins > Development > Import plugin from manifest 로 로컬 테스트 가능
+- 글자 수, 말투(합니다체/해요체/한다체) 선택 후 생성
+- 선택한 텍스트 레이어에 삽입 또는 새 텍스트 레이어 생성
+
 ## 데모
 
 https://sei0.github.io/korem-ipsum/

@@ -35,6 +35,13 @@ $RECYCLE.BIN/
 *.swo
 *~
 
+# Playwright verification screenshots (root level only)
+/*-verify.png
+/*-final.png
+/*-after.png
+/*-before.png
+/*-centered.png
+
 # Logs
 *.log
 npm-debug.log*
