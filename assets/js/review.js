@@ -285,7 +285,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const reviewLengthInput = document.getElementById('reviewLength');
 
     // Generate button click
-    generateBtn.addEventListener('click', generateAllReviews);
+    generateBtn.addEventListener('click', () => {
+        generateAllReviews();
+        if (typeof gtag === 'function') {
+            gtag('event', 'generate_review', {
+                product_name: productNameInput.value.trim() || '상품',
+                review_length: parseInt(reviewLengthInput.value) || 100
+            });
+        }
+    });
 
     // Enter key support
     productNameInput.addEventListener('keypress', (e) => {
@@ -310,9 +318,12 @@ document.addEventListener('DOMContentLoaded', () => {
             textarea.select();
             document.execCommand('copy');
 
-            // Show toast
             if (typeof showToast === 'function') {
                 showToast();
+            }
+
+            if (typeof gtag === 'function') {
+                gtag('event', 'copy_review', { card_id: targetId });
             }
         });
     });

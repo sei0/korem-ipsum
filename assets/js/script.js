@@ -567,6 +567,11 @@ generateBtn.addEventListener('click', () => {
     output1.value = generateFakeSentenceLoremIpsum(targetLength, 'formal');   // 합니다체
     output2.value = generateFakeSentenceLoremIpsum(targetLength, 'polite');   // 해요체
     output3.value = generateFakeSentenceLoremIpsum(targetLength, 'casual');   // 한다체
+
+    // GA4 이벤트: 텍스트 생성
+    if (typeof gtag === 'function') {
+        gtag('event', 'generate_text', { char_count: targetLength });
+    }
 });
 
 // overlay 클릭으로 복사
@@ -590,6 +595,11 @@ overlays.forEach(overlay => {
             targetTextarea.select();
             document.execCommand('copy');
             showToast();
+        }
+
+        // GA4 이벤트: 텍스트 복사
+        if (typeof gtag === 'function') {
+            gtag('event', 'copy_text', { card_id: targetId });
         }
     });
 });
@@ -615,6 +625,11 @@ copyIconButtons.forEach(button => {
             targetTextarea.select();
             document.execCommand('copy');
             showToast();
+        }
+
+        // GA4 이벤트: 텍스트 복사 (아이콘 버튼)
+        if (typeof gtag === 'function') {
+            gtag('event', 'copy_text', { card_id: targetId });
         }
     });
 });

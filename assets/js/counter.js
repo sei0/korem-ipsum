@@ -84,6 +84,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if (typeof showToast === 'function') {
                 showToast();
             }
+            if (typeof gtag === 'function') {
+                gtag('event', 'copy_counter_text', {
+                    char_count: textInput.value.length
+                });
+            }
         } catch (error) {
             alert('클립보드 복사에 실패했습니다. 브라우저 권한을 확인해주세요.');
         }
