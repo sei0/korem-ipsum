@@ -1,83 +1,82 @@
-# Korem Ipsum - 한글 더미 텍스트 생성기
+# Korem Ipsum
 
-디자인과 웹 개발 작업에 필요한 자연스러운 한글 더미 텍스트를 생성하는 도구입니다.
+A natural Korean dummy text generator for design and web development.
 
-## 특징
+**Demo**: [https://sei0.github.io/korem-ipsum/](https://sei0.github.io/korem-ipsum/)
 
-- **자연스러운 한글**: 실제 한글 사용 빈도를 반영한 알고리즘 기반
-- **빠른 생성**: 원하는 글자 수(10-10,000자)만큼 즉시 생성
-- **간편한 복사**: 클릭 한 번으로 클립보드에 복사
-- **다양한 말투**: 합니다체, 해요체, 한다체 3가지 톤 지원
-- **반응형 디자인**: 모바일, 태블릿, 데스크톱 지원
-- **문장 연결**: 접속사를 활용한 자연스러운 문장 흐름
-- **문단 구분**: 적절한 문단 나눔으로 가독성 향상
-- **중복 방지**: 문장 내 명사 중복 방지
+## Features
+
+- **Natural Korean text** — Algorithm based on real Korean character frequency distribution
+- **Three speech styles** — Formal (합니다체), Polite (해요체), Plain (한다체)
+- **Instant generation** — 10 to 10,000 characters
+- **One-click copy** — Click any card to copy to clipboard
+- **Responsive** — Mobile, tablet, desktop
+- **Sentence flow** — Conjunctions for natural paragraph transitions
+- **Paragraph breaks** — Auto line breaks every 3–5 sentences
+- **No noun repetition** — Prevents duplicate nouns within a sentence
+- **Profanity filter** — Blocks forbidden words and brand names
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| **Dummy Text** | Generate natural Korean placeholder text in 3 speech styles |
+| **Review Generator** | Generate dummy product reviews for e-commerce UI testing |
+| **Character Counter** | Count characters, words, bytes, sentences, paragraphs, and manuscript pages |
 
 ## Figma Plugin
 
-Figma에서 바로 한글 더미 텍스트를 생성할 수 있는 플러그인입니다.
+Generate Korean dummy text directly inside Figma.
 
-- `figma-plugin/` 디렉토리에 소스 코드가 있습니다
-- Figma Desktop > Plugins > Development > Import plugin from manifest 로 로컬 테스트 가능
-- 글자 수, 말투(합니다체/해요체/한다체) 선택 후 생성
-- 선택한 텍스트 레이어에 삽입 또는 새 텍스트 레이어 생성
+- Source: `figma-plugin/` directory
+- Local test: Figma Desktop > Plugins > Development > Import plugin from manifest
+- Select character count and speech style, then insert into selected text layer or create a new one
 
-## 데모
+## Generation Rules
 
-https://sei0.github.io/korem-ipsum/
+### Character Frequency Distribution
 
-## 사용 방법
+| Component | Distribution |
+|-----------|-------------|
+| **Initial consonant** | Common (ㄱ,ㄴ,ㄷ,ㄹ,ㅁ,ㅂ,ㅅ,ㅇ,ㅈ) 98% · Aspirated (ㅊ,ㅋ,ㅌ,ㅍ,ㅎ) 1% · Double (ㄲ,ㄸ,ㅃ,ㅆ,ㅉ) 1% |
+| **Vowel** | Basic (ㅏ,ㅓ,ㅣ) 80% · Mid (ㅔ) 15% · Less common (ㅐ,ㅑ,ㅕ,ㅡ) 3% · Compound 1% · Rare 1% |
+| **Final consonant** | None 85% · Allowed (ㄱ,ㄴ,ㅂ,ㅇ) 15% |
 
-1. 원하는 글자 수를 입력합니다 (10-10,000자)
-2. "생성하기" 버튼을 클릭합니다
-3. 3가지 다른 말투(합니다체, 해요체, 한다체)로 생성된 텍스트를 확인합니다
-4. 원하는 텍스트를 클릭하면 클립보드에 복사됩니다
+### Sentence Structure
 
-## 기술 스택
+- **Word length**: Weighted random, 2–3 syllables
+- **Sentence length**: Short 30% · Medium 50% · Long 20%
+- **Conjunctions**: 30% chance per sentence, pool of 20 conjunctions (그리고, 하지만, 따라서, etc.)
+- **Paragraphs**: Auto line break every 3–5 sentences
 
-- **HTML5**: 시맨틱 마크업, 접근성 고려
-- **CSS3**: 반응형 디자인, CSS 변수, 애니메이션
-- **Vanilla JavaScript**: 프레임워크 없는 순수 자바스크립트
-- **Pretendard 폰트**: 한글 최적화 웹폰트
-- **GitHub Pages**: 무료 호스팅
+### Particle Processing
 
-## 한글 생성 알고리즘
+Automatic selection based on final consonant (batchim) detection:
 
-### 출현 빈도 기반 생성
-- **초성**: 일반 자음(ㄱ,ㄴ,ㄷ,ㄹ,ㅁ,ㅂ,ㅅ,ㅇ,ㅈ) 98% | 격음(ㅊ,ㅋ,ㅌ,ㅍ,ㅎ) 1% | 쌍자음 1%
-- **중성**: ㅏ,ㅓ,ㅣ 80% | ㅔ 15% | ㅐ,ㅑ,ㅕ,ㅡ 3% | 복합모음 1% | 희귀모음 1%
-- **종성**: 받침없음 85% | ㄴ,ㅇ 각4.5% | ㄱ,ㅂ 각3%
+- 은/는, 이/가, 을/를, 과/와, 로/으로
+- Special handling for ㄹ final consonant (로/으로)
 
-### 문장 구조
-- **단어 길이**: 2-3음절 가중치 기반 랜덤 생성
-- **문장 길이**: SHORT(30%), MEDIUM(50%), LONG(20%) 가중치 적용
-- **문장 연결**: 30% 확률로 20개 접속사(그리고, 하지만, 따라서 등) 사용
-- **문단 구분**: 3-5문장마다 자동 줄바꿈
-- **명사 중복 방지**: 한 문장 내 동일 명사 반복 방지
+### Combination Filters
 
-### 조사 처리 (받침 검사)
-- 은/는, 이/가, 을/를, 과/와, 로/으로 자동 처리
-- ㄹ 받침 특수 처리 (로/으로)
+- Rare/compound vowel + final consonant → 99% removed
+- Aspirated/double initial + complex final → removed
+- Unnatural syllable combinations auto-filtered
 
-### 말투 변환
-- **합니다체**: 격식 있는 문어체 (기본)
-- **해요체**: 친근한 구어체
-- **한다체**: 평어체
+## Tech Stack
 
-### 조합 제한 규칙
-- 희귀/복합/덜쓰는 모음 + 받침 → 99% 제거
-- 격음/쌍자음 + 복잡한 받침 → 제거
-- 부자연스러운 조합 자동 필터링
+- HTML5 / CSS3 / Vanilla JavaScript
+- [Pretendard](https://github.com/orioncactus/pretendard) font
+- GitHub Pages
 
-## 라이선스
+## License
 
-MIT License
+MIT
 
-## 기여
+## Contributing
 
-이슈 및 PR은 환영합니다.
+Issues and PRs are welcome.
 
-## 제작
+---
 
 Made with ❤️ by sei
 
